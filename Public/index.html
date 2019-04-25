@@ -1,10 +1,320 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        .logo{
+            height: 50px;
+            width: 55px;
+            position: relative;
+            top: -35px;
+        }
+        #yeelow{
+            background-color: rgba(255, 153, 0, 0.317647058823529);
+            width: 86px;
+            height: 28px;
+            margin-top: 10px;
+        }
+        #logo{
+            width: 100px;
+            height: 60px;
+            position:absolute;
+            top: 25px;
+            left: 125px;
+        }
+        .logoul>li{
+            float: left;
+            line-height: 111px;
+            margin-right: 50px;
+        }
+        .logoul{
+        list-style-type:none;
+            height: 111px;
+            margin-left: 350px;
+        }
+        #logoul{
+            list-style-type:none;
+        }
+        #logoul>li{
+            float: left;
+        }
+        .logop{
+            color: rgb(207, 169, 114);
+            position: relative;
+            right: 5px;
+            font-size: 12px;
+        }
+        #nav{
+            height: 111px;
+            border: 1px solid #CCCCCC;
+        }
+        #banner{
+            height: 650px;
+        }
+    </style>
+    <style>
+        #lunbobox {
+            width: 100%;
+            height:499px;
+            position:relative;
+        }
+        .lunbo {
+            width: 100%;
+            height:300px;
+        }
+        .lunbo img {
+            width: 100%;
+            height:499px;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #lunbobox ul {
+            width:285px;
+            position:absolute;
+            left: 670px;
+            bottom:10px;
+            right:0px;
+            z-index:5;
+        }
+        #lunbobox ul li {
+            cursor:pointer;
+            width:8px;
+            height:8px;
+            border-radius:50px;
+            float:left;
+            list-style:none;
+            background:#cccccc;
+            text-align:center;
+            margin:0px 5px 0px 0px;
+        }
+        /*#toleft {*/
+            /*display:none;*/
+            /*width:30px;*/
+            /*height:100px;*/
+            /*font-size:40px;*/
+            /*line-height:100px;*/
+            /*text-align:center;*/
+            /*color: #070807;*/
+            /*position:absolute;*/
+            /*top:200px;*/
+            /*left:12px;*/
+            /*cursor:pointer;*/
+            /*z-index:99;*/
+            /*opacity:0.4;*/
+        /*}*/
+        /*#toright {*/
+            /*display:none;*/
+            /*width:30px;*/
+            /*height:100px;*/
+            /*font-size:40px;*/
+            /*line-height:100px;*/
+            /*text-align:center;*/
+            /*color: #070807;*/
+            /*!*background:#cccccc;*/
+            /**!*/
+            /*position:absolute;*/
+            /*top:200px;*/
+            /*right:0px;*/
+            /*cursor:pointer;*/
+            /*z-index:99;*/
+            /*opacity:0.4;*/
+        /*}*/
+    </style>
 </head>
 <body>
+<div id="nav">
+    <div id="logo">
+        <div id="yeelow">
+        </div>
+        <ul id="logoul">
+            <li><img class="logo" src="img/1123.png" alt=""></li>
+            <li><p class="logop">小食记</p></li>
+        </ul>
+    </div>
+    <ul class="logoul">
+        <li>
+            <p>首页</p>
+        </li>
+        <li>
+            <p>所有产品</p>
+        </li>
+        <li>
+            <p>特产礼品</p>
+        </li>
+        <li>
+            <p>口味侦探</p>
+        </li>
+        <li>
+            <p>加入我们</p>
+        </li>
+    </ul>
+</div>
+<div id="banner">
+    <div class="middle_right">
+        <div id="lunbobox">
+            <!--<div id="toleft">-->
+                <!--&lt;</div>-->
+            <div class="lunbo">
+                <a href="#"><img src="img/00033.jpg"></a>
+                <a href="#"><img src="img/banner1.jpg"></a>
+                <a href="#"><img src="img/banner2.jpg"></a>
+                <a href="#"><img src="img/00034.jpg"></a>
+                <a href="#"><img src="img/banner3.jpg"></a>
+            </div>
+            <!--<div id="toright">&gt;</div>-->
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <span></span>
+        </div>
+    </div>
+</div>
+<dic id="Explosion">
+    
+</dic>
+<script src="js/jQuery%20v3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    ///轮播
+    $(function() {
+        //$("#toright").hide();
+        //$("#toleft").hide();
+        $('#toright').hover(function() {
+            $("#toleft").hide()
+        }, function() {
+            $("#toleft").show()
+        })
+        $('#toleft').hover(function() {
+            $("#toright").hide()
+        }, function() {
+            $("#toright").show()
+        })
+    })
 
+    var t;
+    var index = 0;
+    /////自动播放
+    t = setInterval(play, 3000)
+
+    function play() {
+        index++;
+        if (index > 4) {
+            index = 0
+        }
+        // console.log(index)
+        $("#lunbobox ul li").eq(index).css({
+            "background": "#666"
+        }).siblings().css({
+            "background": "#aaa"
+        })
+
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+    };
+
+    ///点击鼠标 图片切换
+    $("#lunbobox ul li").click(function() {
+
+        //添加 移除样式
+        //$(this).addClass("lito").siblings().removeClass("lito"); //给当前鼠标移动到的li增加样式 且其余兄弟元素移除样式   可以在样式中 用hover 来对li 实现
+        $(this).css({
+            "background": "#666"
+        }).siblings().css({
+            "background": "#aaa"
+        })
+        var index = $(this).index(); //获取索引 图片索引与按钮的索引是一一对应的
+        // console.log(index);
+
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
+    });
+
+    /////////////上一张、下一张切换
+    $("#toleft").click(function() {
+        index--;
+        if (index <= 0) //判断index<0的情况为：开始点击#toright  index=0时  再点击 #toleft 为负数了 会出错
+        {
+            index = 4
+        }
+        console.log(index);
+        $("#lunbobox ul li").eq(index).css({
+            "background": "#666"
+        }).siblings().css({
+            "background": "#aaa"
+        })
+
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）必须要写
+    }); // $("#imgbox a ")获取到的是一个数组集合 。所以可以用index来控制切换
+
+    $("#toright").click(function() {
+        index++;
+        if (index > 4) {
+            index = 0
+        }
+        console.log(index);
+        $(this).css({
+            "opacity": "0.5"
+        })
+        $("#lunbobox ul li").eq(index).css({
+            "background": "#666"
+        }).siblings().css({
+            "background": "#aaa"
+        })
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
+    });
+    $("#toleft,#toright").hover(function() {
+            $(this).css({
+                "color": "black"
+            })
+        },
+        function() {
+            $(this).css({
+                "opacity": "0.3",
+                "color": ""
+            })
+        })
+    ///
+
+    ///////鼠标移进  移出
+    $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(
+        ////////鼠标移进
+        function() {
+            $('#toright,#toleft').show()
+            clearInterval(t);
+
+        },
+        ///////鼠标移开
+        function() {
+            //$('#toright,#toleft').hide()
+            //alert('aaa')
+            t = setInterval(play, 3000)
+
+            function play() {
+                index++;
+                if (index > 4) {
+                    index = 0
+                }
+                $("#lunbobox ul li").eq(index).css({
+                    "background": "#666",
+                }).siblings().css({
+                    "background": "#aaa"
+                })
+                $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+            }
+        })
+</script>
 </body>
 </html>
