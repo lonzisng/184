@@ -127,6 +127,11 @@
             else return;
             pagination.querySelector('.pagination__item--current').classList.remove('pagination__item--current');
             triggers[newpos].classList.add('pagination__item--current');
+            
         });
+        let auto = setInterval(function(){
+            newpos = slideshow.current < slideshow.slidesTotal-1 ? slideshow.current+1 : 0;
+            slideshow.navigate(newpos);
+        },4000);
     });
 }
