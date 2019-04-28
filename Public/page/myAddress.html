@@ -57,10 +57,51 @@
             我的地址
         </p>
         <div>
-            <p class="addAdress">
+            <div class="add" id="add">
                 <span class="icon icon-jiahao1"></span>
                 <a href="#">添加地址</a>
-            </p>
+            </div>
+<!--            添加地址-->
+            <div class="addAddress">
+                <table>
+                    <tr>
+                            <th>联系人</th>
+                            <td><input type="text"></td>
+                        </tr>
+                    <tr>
+                            <th>所在地区</th>
+                            <td>
+                                <select name="" id="prov"></select>
+                                <select name="" id="city"></select>
+                            </td>
+                        </tr>
+                    <tr>
+                            <th>详细地址</th>
+                            <td>
+                                <textarea name="" id="" cols="21" rows="5"></textarea>
+                            </td>
+                        </tr>
+                    <tr>
+                            <th>手机号码</th>
+                            <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                             <th>邮政编码</th>
+                             <td>
+                                 <input type="text">
+                             </td>
+                         </tr>
+                    <tr>
+                            <th></th>
+                            <td><input type="checkbox">设为默认地址</td>
+                    </tr>
+                    <tr>
+                         <td colspan="2">
+                             <button id="saveAddress">保存</button>
+                         </td>
+                    </tr>
+                </table>
+            </div>
             <table class="myAddress" cellspacing="20">
                 <thead>
                 <tr>
@@ -86,7 +127,7 @@
                     </td>
                     <td>12345678963</td>
                     <td>
-                        <a href="#">修改</a>
+                        <a id="update">修改</a>
                         |
                         <a href="#">删除</a>
                     </td>
@@ -139,6 +180,48 @@
                 </tbody>
             </table>
         </div>
+<!--        修改地址-->
+        <div class="updateAddress">
+            <table>
+                <tr>
+                    <th>联系人</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>所在地区</th>
+                    <td>
+                        <select name="" id="updateProv"></select>
+                        <select name="" id="updateCity"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>详细地址</th>
+                    <td>
+                        <textarea name="" cols="21" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>手机号码</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>邮政编码</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><input type="checkbox">设为默认地址</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button id="updateSave">保存</button>
+                        <button id="reset">取消</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div class="divPage">
             <ul>
                 <li class="icon icon-xiangzuojiantou" title="上一页"></li>
@@ -149,4 +232,6 @@
     </div>
 </section>
 </body>
+<script src="../plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="../js/myAddress.js"></script>
 </html>
