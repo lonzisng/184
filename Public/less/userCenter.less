@@ -18,10 +18,26 @@ ul>li{
 .sizeCenter{
   text-align: center;
 }
+//input样式
+input{
+  outline:black;
+  border: 1px solid @borderColor;
+  width: 165px;
+  height: 25px;
+}
+//按钮
+button{
+  width: 75px;
+  height: 25px;
+  .sizeCenter();
+  border: 1px solid @borderColor;
+  line-height: 25px;
+  margin: @lgMargin;
+}
+//section
 section{
   width: 1200px;
   min-width: 1000px;
-  border: 1px solid red;
   .clear();
   .center();
   >div{
@@ -189,9 +205,10 @@ section{
   }
 }
 //我的地址
-.addAdress{
+.add{
   margin: @mdMargin;
   font-size: @xsFont;
+  width: 80px;
   >span{
     display: inline-block;
     width: 15px;
@@ -201,6 +218,33 @@ section{
     border-radius:15px ;
     .sizeCenter();
   }
+}
+.addAddress,.updateAddress{
+    display: none;
+    border: 1px solid @borderColor;
+    width: 500px;
+    padding: @bgPadding;
+    position: absolute;
+    top:50px;
+    left:550px;
+    background: rgba(66,66,66,.5);
+    color:white;
+    .center();
+      >table{
+        width: 500px;
+        height:400px;
+        text-align: left;
+        tr{
+          font-size: @xsFont;
+        }
+        tr:nth-last-child(2) input{
+          width: 15px;
+          height:15px;
+        }
+        tr:nth-last-child(1) td{
+          border-top: 1px solid @borderColor;
+        }
+      }
 }
 .myAddress{
   margin-top: @bgMargin;
@@ -289,6 +333,174 @@ section{
     color: @dotColor;
   }
 }
+//我的文章
+.myArticle{
+  margin: @mdMargin;
+  .article{
+    padding:0 0 @mdPadding 0;
+    .clear();
+    >p:nth-of-type(1){
+      font-size: @smFont;
+      font-weight: bold;
+      margin: @mdMargin 0 ;
+    }
+    >div>p{
+      font-size: @xsFont;
+      line-height: 20px;
+      float: right;
+      position: relative;
+      right:90px;
+      a{
+        margin-top: @mdMargin;
+        float: right;
+        color:#000099 ;
+        font-size: 12px;
+        margin-right:20px ;
+      }
+    }
+    img{
+      width: 215px;
+      height: 125px;
+    }
+  }
+}
+//文章详情
+.articleDetails{
+  margin:@bgMargin 0;
+  >p{
+    font-size: @mdFont;
+    font-weight: bold;
+  }
+  .content{
+    >p{
+      margin: @mdMargin 0;
+      color:#333;
+      line-height: 25px;
+    }
+    div:nth-of-type(1){
+      width: 575px;
+      .center();
+    }
+    img{
+      width: 575px;
+      height: 335px;
+    }
+    span{
+      color: #949494;
+    }
+    div:nth-of-type(2){
+      width: 220px;
+      .center();
+    }
+    button{
+      width: 78px;
+      height: 26px;
+      .sizeCenter();
+      .center();
+      line-height: 26px;
+      border: 1px solid black;
+      margin-left: 20px;
+    }
+    button:nth-of-type(2){
+      color:white;
+      background: @dotColor;
+    }
+  }
+  .commentList{
+    margin:@bgMargin 0;
+    >p{
+      font-size: @mdFont;
+      font-weight: bold;
+      margin:@bgMargin 0;
+    }
+    >.comment{
+      border-bottom: 1px solid @borderColor;
+      height: 100px;
+      margin:0 @lgMargin @lgMargin 0;
+      .clear();
+      >div{
+        float: left;
+        margin:@xsMargin 0 ;
+        img{
+          width: 80px;
+          height: 80px;
+        }
+        p{
+          margin: @smMargin;
+        }
+        >p:nth-of-type(1){
+          font-size: @xsFont;
+          font-weight: bold;
+          .clear();
+          >span{
+            float: right;
+            font-weight:lighter;
+          }
+        }
+        >p:nth-of-type(2){
+          font-size: 13px;
+        }
+        >p:nth-of-type(3){
+          .clear();
+          span{
+            float: right;
+            margin-left: @lgMargin;
+          }
+        }
+      }
+      >div:nth-of-type(1){
+        width: 10%;
+      }
+      >div:nth-of-type(2){
+        width: 85%;
+      }
+    }
+  }
+}
+//我的账号
+.myAccount{
+  width: 500px;
+  height: 500px;
+  text-align: left;
+  tr{
+    margin: @mdMargin 0;
+   td{
+     margin-left: @mdMargin;
+   }
+    img{
+      width: 130px;
+      height: 120px;
+    }
+  }
+  tr:nth-of-type(3) input{
+    width: 15px;
+    height:15px;
+  }
+}
+.save{
+  border-top:1px solid @borderColor;
+  width: 90%;
+}
+.updatePwd{
+  position: absolute;
+  z-index: 2;
+  top:200px;
+  right: 200px;
+  background: rgba(66,66,66,.5);
+  display: none;
+  font-size: @xsFont;
+  border: 1px solid @borderColor;
+  width: 500px;
+  .center();
+  table{
+    width: 500px;
+    height: 300px;
+    tr:nth-last-child(1) td{
+      border-top: 1px solid @borderColor;
+    }
+  }
+}
+//分页
 .divPage{
   margin-top:@lgMargin ;
   float: right;
@@ -301,4 +513,4 @@ section{
     border: 1px solid @borderColor;
     margin-left: @smMargin;
   }
-} //分页
+}

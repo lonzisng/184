@@ -280,10 +280,23 @@ ul > li {
 .sizeCenter {
   text-align: center;
 }
+input {
+  outline: black;
+  border: 1px solid #d7d7d7;
+  width: 165px;
+  height: 25px;
+}
+button {
+  width: 75px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  line-height: 25px;
+  margin: 32px;
+}
 section {
   width: 1200px;
   min-width: 1000px;
-  border: 1px solid red;
   overflow: hidden;
   margin: 0  auto;
 }
@@ -447,11 +460,12 @@ section > .right > p {
 .myCollection .collectionList > li:nth-of-type(1) {
   margin-left: 0;
 }
-.addAdress {
+.add {
   margin: 16px;
   font-size: 14px;
+  width: 80px;
 }
-.addAdress > span {
+.add > span {
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -459,6 +473,38 @@ section > .right > p {
   border: 1px solid black;
   border-radius: 15px ;
   text-align: center;
+}
+.addAddress,
+.updateAddress {
+  display: none;
+  border: 1px solid #d7d7d7;
+  width: 500px;
+  padding: 24px;
+  position: absolute;
+  top: 50px;
+  left: 550px;
+  background: rgba(66, 66, 66, 0.5);
+  color: white;
+  margin: 0  auto;
+}
+.addAddress > table,
+.updateAddress > table {
+  width: 500px;
+  height: 400px;
+  text-align: left;
+}
+.addAddress > table tr,
+.updateAddress > table tr {
+  font-size: 14px;
+}
+.addAddress > table tr:nth-last-child(2) input,
+.updateAddress > table tr:nth-last-child(2) input {
+  width: 15px;
+  height: 15px;
+}
+.addAddress > table tr:nth-last-child(1) td,
+.updateAddress > table tr:nth-last-child(1) td {
+  border-top: 1px solid #d7d7d7;
 }
 .myAddress {
   margin-top: 24px;
@@ -543,6 +589,168 @@ section > .right > p {
 .myLogistics > ul > li:nth-of-type(3) {
   line-height: 110px;
   color: #cfa972;
+}
+.myArticle {
+  margin: 16px;
+}
+.myArticle .article {
+  padding: 0 0 16px 0;
+  overflow: hidden;
+}
+.myArticle .article > p:nth-of-type(1) {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 16px 0;
+}
+.myArticle .article > div > p {
+  font-size: 14px;
+  line-height: 20px;
+  float: right;
+  position: relative;
+  right: 90px;
+}
+.myArticle .article > div > p a {
+  margin-top: 16px;
+  float: right;
+  color: #000099 ;
+  font-size: 12px;
+  margin-right: 20px ;
+}
+.myArticle .article img {
+  width: 215px;
+  height: 125px;
+}
+.articleDetails {
+  margin: 24px 0;
+}
+.articleDetails > p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.articleDetails .content > p {
+  margin: 16px 0;
+  color: #333;
+  line-height: 25px;
+}
+.articleDetails .content div:nth-of-type(1) {
+  width: 575px;
+  margin: 0  auto;
+}
+.articleDetails .content img {
+  width: 575px;
+  height: 335px;
+}
+.articleDetails .content span {
+  color: #949494;
+}
+.articleDetails .content div:nth-of-type(2) {
+  width: 220px;
+  margin: 0  auto;
+}
+.articleDetails .content button {
+  width: 78px;
+  height: 26px;
+  text-align: center;
+  margin: 0  auto;
+  line-height: 26px;
+  border: 1px solid black;
+  margin-left: 20px;
+}
+.articleDetails .content button:nth-of-type(2) {
+  color: white;
+  background: #cfa972;
+}
+.articleDetails .commentList {
+  margin: 24px 0;
+}
+.articleDetails .commentList > p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 24px 0;
+}
+.articleDetails .commentList > .comment {
+  border-bottom: 1px solid #d7d7d7;
+  height: 100px;
+  margin: 0 32px 32px 0;
+  overflow: hidden;
+}
+.articleDetails .commentList > .comment > div {
+  float: left;
+  margin: 4px 0;
+}
+.articleDetails .commentList > .comment > div img {
+  width: 80px;
+  height: 80px;
+}
+.articleDetails .commentList > .comment > div p {
+  margin: 8px;
+}
+.articleDetails .commentList > .comment > div > p:nth-of-type(1) {
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+}
+.articleDetails .commentList > .comment > div > p:nth-of-type(1) > span {
+  float: right;
+  font-weight: lighter;
+}
+.articleDetails .commentList > .comment > div > p:nth-of-type(2) {
+  font-size: 13px;
+}
+.articleDetails .commentList > .comment > div > p:nth-of-type(3) {
+  overflow: hidden;
+}
+.articleDetails .commentList > .comment > div > p:nth-of-type(3) span {
+  float: right;
+  margin-left: 32px;
+}
+.articleDetails .commentList > .comment > div:nth-of-type(1) {
+  width: 10%;
+}
+.articleDetails .commentList > .comment > div:nth-of-type(2) {
+  width: 85%;
+}
+.myAccount {
+  width: 500px;
+  height: 500px;
+  text-align: left;
+}
+.myAccount tr {
+  margin: 16px 0;
+}
+.myAccount tr td {
+  margin-left: 16px;
+}
+.myAccount tr img {
+  width: 130px;
+  height: 120px;
+}
+.myAccount tr:nth-of-type(3) input {
+  width: 15px;
+  height: 15px;
+}
+.save {
+  border-top: 1px solid #d7d7d7;
+  width: 90%;
+}
+.updatePwd {
+  position: absolute;
+  z-index: 2;
+  top: 200px;
+  right: 200px;
+  background: rgba(66, 66, 66, 0.5);
+  display: none;
+  font-size: 14px;
+  border: 1px solid #d7d7d7;
+  width: 500px;
+  margin: 0  auto;
+}
+.updatePwd table {
+  width: 500px;
+  height: 300px;
+}
+.updatePwd table tr:nth-last-child(1) td {
+  border-top: 1px solid #d7d7d7;
 }
 .divPage {
   margin-top: 32px;
