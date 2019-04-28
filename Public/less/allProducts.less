@@ -1,2 +1,41 @@
 @import "./public.less";
 
+.navigation{
+    width: 1200px;
+    margin: auto;
+    position: relative;
+    img{
+        width: 1200px;
+        height: 500px;
+    }
+    nav{
+        position: absolute;
+        color: #fff;
+        width:200px;
+        height: 500px;
+        background-color: rgba(0,0,0,.5);
+        z-index: 999;
+        p{
+            background-color: #cfa972;
+            padding:@mdPadding 0;
+            text-align: center;
+            font-size: @smFont;
+        }
+        >ul{
+            >li{
+                float: none;
+                padding:@smPadding;
+                h4{
+                    color:@dotColor;
+                }
+                ul{
+                    overflow: hidden;
+                    li{
+                        padding:@xsPadding @smPadding;
+                        font-size:12px;
+                    }
+                }
+            }
+        }
+    }
+}

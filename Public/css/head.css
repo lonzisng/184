@@ -311,9 +311,15 @@ header nav ul li:hover div {
 header nav ul:last-of-type {
   float: right;
 }
+header nav ul:last-of-type li:hover {
+  color: #424242;
+}
 header nav ul:last-of-type li > span {
   font-size: 18px;
   line-height: 52px;
+}
+header nav ul:last-of-type li > span:hover {
+  color: #cfa972;
 }
 header nav ul:last-of-type li:first-child {
   margin-right: 32px;

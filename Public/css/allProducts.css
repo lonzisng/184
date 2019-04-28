@@ -16,7 +16,6 @@ li {
 input,
 button {
   outline: none;
-  border: none;
 }
 @font-face {
   font-family: "icon";
@@ -265,4 +264,41 @@ button {
 }
 .icon-favoriteslist:before {
   content: "\e69c";
+}
+.navigation {
+  width: 1200px;
+  margin: auto;
+  position: relative;
+}
+.navigation img {
+  width: 1200px;
+  height: 500px;
+}
+.navigation nav {
+  position: absolute;
+  color: #fff;
+  width: 200px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.navigation nav p {
+  background-color: #cfa972;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 16px;
+}
+.navigation nav > ul > li {
+  float: none;
+  padding: 8px;
+}
+.navigation nav > ul > li h4 {
+  color: #cfa972;
+}
+.navigation nav > ul > li ul {
+  overflow: hidden;
+}
+.navigation nav > ul > li ul li {
+  padding: 4px 8px;
+  font-size: 12px;
 }

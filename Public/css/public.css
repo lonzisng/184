@@ -16,7 +16,6 @@ li {
 input,
 button {
   outline: none;
-  border: none;
 }
 @font-face {
   font-family: "icon";
