@@ -1,0 +1,48 @@
+@import "./public.less";
+
+footer{
+    margin-top:@bgMargin*2;
+    width: 100%;
+    background-color: #424242;
+    color: #fff;
+    p{
+        text-align: center;
+        font-size: 12px;
+        padding:@smPadding 0;
+    }
+    p:first-of-type{
+        height: 50px;
+        line-height: 50px;
+        background-color: #c1c1c1;
+    }
+    >ul{
+        width:1200px;
+        margin: 0 auto;
+        text-align: left;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        h4{
+            font-size: @smFont;
+            padding:@lgPadding 0 @mdPadding;
+        }
+        >li{
+            width:10%;
+            >ul>li{
+                float: none;
+                padding:@smPadding 0;
+            }
+            .iconLi{
+                float: left;
+                padding:@smPadding;
+                padding-left: 0;
+                span.icon{
+                    font-size: @mdFont;
+                }
+                
+            }
+        }
+    }
+
+}

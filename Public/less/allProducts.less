@@ -1,0 +1,97 @@
+@import "./public.less";
+
+
+.navigation{
+    width: 1200px;
+    margin: auto;
+    position: relative;
+    img{
+        width: 1200px;
+        height: 500px;
+    }
+    >nav{
+        position: absolute;
+        color: #fff;
+        width:200px;
+        height: 500px;
+        background-color: rgba(0,0,0,.5);
+        z-index: 999;
+        p{
+            background-color: #cfa972;
+            padding:@mdPadding 0;
+            text-align: center;
+            font-size: @smFont;
+        }
+        >ul{
+            >li{
+                float: none;
+                padding:@smPadding;
+                h4{
+                    color:@dotColor;
+                }
+                ul{
+                    overflow: hidden;
+                    li{
+                        padding:@xsPadding @smPadding;
+                        font-size:12px;
+                    }
+                }
+            }
+        }
+    }
+}
+.orderBar{
+    width: 1200px;
+    margin: @lgMargin auto @mdMargin;
+    padding:@smPadding;
+    overflow: hidden;
+    border: 1px solid #cfa972;
+    border-width: 1px 0;
+    li{
+        padding:0 @mdPadding;
+        :hover{
+            color:#cfa972;
+        }
+        .icon{
+            display: inline-block;
+            width: 8px;
+        }
+        input{
+            color:#cfa972;
+        }
+    }
+}
+.products{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:-@bgMargin;
+    .goods{
+        width: 260px;
+        height: 360px;
+        box-shadow: 0px 0px 10px rgba(153, 153, 153, .5);
+        margin-top:@lgMargin;
+        h4{
+            font-weight: 700;
+            margin-left: 15px;
+            padding:@xsPadding 0;
+        }
+        p{
+            margin-bottom: 0;
+            margin: 0 15px;
+            font-size: @mdFont;
+            .icon{
+                display: inline;
+                float: right;
+                color:#cfa972;
+                font-size: @mdFont;
+            }
+        }
+        img{
+            width: 260px;
+            height: 300px;
+        }
+    }
+}

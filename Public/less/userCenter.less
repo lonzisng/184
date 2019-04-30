@@ -1,0 +1,516 @@
+@import "public";
+*{
+  font-family: @font;
+}
+@borderColor:#D7D7D7;//边框颜色
+// 整体居中
+.center{
+  margin:0  auto;
+}
+//清除浮动
+.clear{
+  overflow: hidden;
+}
+ul>li{
+  cursor: pointer;
+}
+//字体居中
+.sizeCenter{
+  text-align: center;
+}
+//input样式
+input{
+  outline:black;
+  border: 1px solid @borderColor;
+  width: 165px;
+  height: 25px;
+}
+//按钮
+button{
+  width: 75px;
+  height: 25px;
+  .sizeCenter();
+  border: 1px solid @borderColor;
+  line-height: 25px;
+  margin: @lgMargin;
+}
+//section
+section{
+  width: 1200px;
+  min-width: 1000px;
+  .clear();
+  .center();
+  >div{
+    float: left;
+    margin-left: 3%;
+    >p{
+      font-size: @smFont;
+      color: @dotColor;
+      height: 35px;
+      .center();
+      line-height: 35px;
+    }
+    >p>span{
+      width: 10px;
+      height: 10px;
+      background: @dotColor;
+      border-radius:10px;
+      display: inline-block;
+    }
+  }
+ > .left{
+    width: 200px;
+    min-width: 20%;
+   >p{
+     float: right;
+     .clear();
+   }
+  }
+ > .right{
+    min-width: 70%;
+   .clear();
+   >p{
+     border-bottom: 1px solid @borderColor;
+   }
+  }
+}
+//左侧导航栏
+.leftNav{ //左侧导航
+  border:1px solid @borderColor;
+  margin-top:@lgMargin;
+  padding-top: @lgPadding;
+  >.tou{
+    .center();
+    border:1px solid @borderColor;
+    width: 176px;
+    height: 176px;
+    border-radius: 176px;
+    >img{
+      margin: 5% ;
+      width: 90%;
+      height: 90%;
+      border-radius: 100%;
+    }
+  }
+  >.menu{
+    .center();
+    width: 100%;
+    .sizeCenter();
+    padding: 30px 0;
+    .clear();
+    ul>li{
+      width: 100%;
+      &:hover{
+        color: @dotColor;
+      }
+    }
+    >ul>li:nth-of-type(1){
+      color: @dotColor;
+    }
+    >ul>li{
+      clear: both;
+      font-size: @smFont;
+      margin-top: 15px;
+      >span{
+        font-size: @smFont;
+      }
+      >ul>li{
+       clear: both;
+        font-size: @xsFont;
+        color: black;
+        margin-top:@smMargin;
+          &:hover{
+            color: @dotColor;
+        }
+      }
+    }
+  }
+}
+// 右栏
+// 我的订单
+.myOrder{
+  margin-top: @bgMargin;
+  width: 95%;
+  text-align: left;
+  font-size:@xsFont ;
+  >tbody>tr>td:nth-of-type(2){
+    line-height: 20px;
+  }
+  >tbody>tr>td:nth-of-type(3){
+    color: #e83518;
+  }
+  span{
+    font-weight: bold;
+  }
+  a{
+    color:@dotColor ;
+  }
+  img{
+    width: 110px;
+    height: 90px;
+  }
+}
+//我的收藏
+.myCollection{
+  width: 100%;
+  .collectionList>li{
+    margin-top: @bgMargin;
+    margin-left: 2%;
+    box-shadow: 0 0 5px #999999;
+    div,p{
+      margin-top:@smMargin ;
+      padding: 0 @smMargin;
+    }
+    img{
+      width: 256px;
+      height: 208px;
+    }
+    p:nth-of-type(1){
+      font-size: @smFont;
+      font-weight: bold;
+      .clear();
+      >span{
+        float: right;
+        color: #e83518;
+        margin-right:@smMargin;
+        font-weight: lighter;
+      }
+    }
+    p:nth-of-type(2){
+      font-size: 12px;
+    }
+    .gouMai{
+      .clear();
+      color: @dotColor;
+      padding-bottom: @smMargin;
+      >p:nth-of-type(1){
+        float: left;
+        font-size:@mdFont;
+      }
+      >p:nth-of-type(2){
+        float: right;
+        width: 95px;
+        height: 25px;
+        .sizeCenter();
+        line-height: 25px;
+        font-size: 12px;
+        border-radius:30px ;
+        color: white;
+        background: @dotColor;
+      }
+    }
+  }
+  .collectionList>li:nth-of-type(1){
+    margin-left: 0;
+  }
+}
+//我的地址
+.add{
+  margin: @mdMargin;
+  font-size: @xsFont;
+  width: 80px;
+  >span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border: 1px solid black;
+    border-radius:15px ;
+    .sizeCenter();
+  }
+}
+.addAddress,.updateAddress{
+    display: none;
+    border: 1px solid @borderColor;
+    width: 500px;
+    padding: @bgPadding;
+    position: absolute;
+    top:50px;
+    left:550px;
+    background: rgba(66,66,66,.5);
+    color:white;
+    .center();
+      >table{
+        width: 500px;
+        height:400px;
+        text-align: left;
+        tr{
+          font-size: @xsFont;
+        }
+        tr:nth-last-child(2) input{
+          width: 15px;
+          height:15px;
+        }
+        tr:nth-last-child(1) td{
+          border-top: 1px solid @borderColor;
+        }
+      }
+}
+.myAddress{
+  margin-top: @bgMargin;
+  width: 95%;
+  text-align: left;
+  font-size:@xsFont ;
+  >tbody>tr:nth-of-type(1)>td:nth-last-child(1)>a{
+    border: 1px solid @dotColor;
+    color: @dotColor;
+  }
+  >tbody>tr>td:nth-last-child(1)>a{
+    border: 1px solid black;
+    color: black;
+    .sizeCenter();
+    display: inline-block;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+//我的物流
+.myLogistics{
+  width: 100%;
+  margin-top: @bgMargin;
+  //.clear();
+  >ul>li{
+    width: 30%;
+    margin-left: 2%;
+    margin-top: @bgMargin;
+    height: 110px;
+    .sizeCenter();
+    img{
+      width: 158px;
+      height: 110px;
+    }
+  }
+  >ul>li:nth-of-type(1){
+    margin-left:-2%;
+    text-align: left;
+  }
+  >ul>li:nth-of-type(2)>div{
+    position: relative;
+    top:30px;
+    left: -90px;
+    font-size: 12px;
+    text-align: left;
+    //.clear();
+    span{
+      font-size: @xsFont;
+      padding: @smPadding 0;
+    }
+    >div{
+      position: relative;
+      float: right;
+      font-weight: bold;
+      font-size: @xsFont;
+      &:hover .logisticsDetails{
+        display: block;
+      }
+      >div{
+        display: none;
+        position: absolute;
+        top: 30px;
+        z-index: 2;
+        right: -80px;
+        width: 250px;
+        height: 200px;
+        background: wheat;
+        >ul>li{
+          float: none;
+          margin-left:@lgMargin ;
+          height: 46px;
+          line-height: 26px;
+          font-weight: lighter;
+          font-size: 12px;
+        }
+        >ul>li:nth-of-type(1){
+          line-height: 46px;
+          border-bottom: 1px solid black;
+        }
+      }
+    }
+  }
+  >ul>li:nth-of-type(3){
+    line-height: 110px;
+    color: @dotColor;
+  }
+}
+//我的文章
+.myArticle{
+  margin: @mdMargin;
+  .article{
+    padding:0 0 @mdPadding 0;
+    .clear();
+    >p:nth-of-type(1){
+      font-size: @smFont;
+      font-weight: bold;
+      margin: @mdMargin 0 ;
+    }
+    >div>p{
+      font-size: @xsFont;
+      line-height: 20px;
+      float: right;
+      position: relative;
+      right:90px;
+      a{
+        margin-top: @mdMargin;
+        float: right;
+        color:#000099 ;
+        font-size: 12px;
+        margin-right:20px ;
+      }
+    }
+    img{
+      width: 215px;
+      height: 125px;
+    }
+  }
+}
+//文章详情
+.articleDetails{
+  margin:@bgMargin 0;
+  >p{
+    font-size: @mdFont;
+    font-weight: bold;
+  }
+  .content{
+    >p{
+      margin: @mdMargin 0;
+      color:#333;
+      line-height: 25px;
+    }
+    div:nth-of-type(1){
+      width: 575px;
+      .center();
+    }
+    img{
+      width: 575px;
+      height: 335px;
+    }
+    span{
+      color: #949494;
+    }
+    div:nth-of-type(2){
+      width: 220px;
+      .center();
+    }
+    button{
+      width: 78px;
+      height: 26px;
+      .sizeCenter();
+      .center();
+      line-height: 26px;
+      border: 1px solid black;
+      margin-left: 20px;
+    }
+    button:nth-of-type(2){
+      color:white;
+      background: @dotColor;
+    }
+  }
+  .commentList{
+    margin:@bgMargin 0;
+    >p{
+      font-size: @mdFont;
+      font-weight: bold;
+      margin:@bgMargin 0;
+    }
+    >.comment{
+      border-bottom: 1px solid @borderColor;
+      height: 100px;
+      margin:0 @lgMargin @lgMargin 0;
+      .clear();
+      >div{
+        float: left;
+        margin:@xsMargin 0 ;
+        img{
+          width: 80px;
+          height: 80px;
+        }
+        p{
+          margin: @smMargin;
+        }
+        >p:nth-of-type(1){
+          font-size: @xsFont;
+          font-weight: bold;
+          .clear();
+          >span{
+            float: right;
+            font-weight:lighter;
+          }
+        }
+        >p:nth-of-type(2){
+          font-size: 13px;
+        }
+        >p:nth-of-type(3){
+          .clear();
+          span{
+            float: right;
+            margin-left: @lgMargin;
+          }
+        }
+      }
+      >div:nth-of-type(1){
+        width: 10%;
+      }
+      >div:nth-of-type(2){
+        width: 85%;
+      }
+    }
+  }
+}
+//我的账号
+.myAccount{
+  width: 500px;
+  height: 500px;
+  text-align: left;
+  tr{
+    margin: @mdMargin 0;
+   td{
+     margin-left: @mdMargin;
+   }
+    img{
+      width: 130px;
+      height: 120px;
+    }
+  }
+  tr:nth-of-type(3) input{
+    width: 15px;
+    height:15px;
+  }
+}
+.save{
+  border-top:1px solid @borderColor;
+  width: 90%;
+}
+.updatePwd{
+  position: absolute;
+  z-index: 2;
+  top:200px;
+  right: 200px;
+  background: rgba(66,66,66,.5);
+  display: none;
+  font-size: @xsFont;
+  border: 1px solid @borderColor;
+  width: 500px;
+  .center();
+  table{
+    width: 500px;
+    height: 300px;
+    tr:nth-last-child(1) td{
+      border-top: 1px solid @borderColor;
+    }
+  }
+}
+//分页
+.divPage{
+  margin-top:@lgMargin ;
+  float: right;
+  >ul>li{
+    .clear();
+    width: 30px;
+    height: 30px;
+    .sizeCenter();
+    line-height: 30px;
+    border: 1px solid @borderColor;
+    margin-left: @smMargin;
+  }
+}

@@ -1,0 +1,154 @@
+@import "./public.less";
+
+
+.transit{
+    transition: all .3s linear;
+}
+header {
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 1px 5px #ccc;
+    .transit;
+    nav {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 0 @bgPadding;
+        font-size: @smFont;
+        .transit;
+        h1 {
+            float: left;
+            .transit;
+            img {
+                height: 50px;
+                padding: 25px 0;
+                .transit;
+            }
+        }
+
+        ul {
+            margin-left: @lgMargin;
+            padding-left: @lgPadding;
+            float: left;
+            height: 100px;
+            .transit;
+            li {
+                padding: @bgPadding @mdPadding;
+                height: 52px;
+                line-height: 24px;
+                text-align: center;
+                cursor: pointer;
+                .transit;
+                div {
+                    height: 12px;
+                    overflow: hidden;
+                    opacity: 0;
+                    .transit;
+                }
+            }
+            li#msgBox{
+                position: relative;
+                #msgList{
+                    display: none;
+                    ul{
+                        position: absolute;
+                        left: -200px;
+                        padding: 0;
+                        margin: 0;
+                        width:250px;
+                        background-color: rgba(245,245,245,1);
+                        box-shadow: 0px 0px 5px rgba(200,200,200,.75)
+                    }
+                    .triangle{
+                        position: absolute;
+                        bottom: 24px;
+                        z-index: 3;
+                        opacity: 1;
+                        width: 0;
+                        height: 0;
+                        border-width:10px 8px;
+                        border-style: solid;
+                        border-color:rgba(0,0,0,0) rgba(0,0,0,0) rgba(245,245,245,1) rgba(0,0,0,0);
+                        // box-shadow: 0px 0px 5px rgba(200,200,200,.75);
+                    }
+                }
+            }
+            li:hover {
+                color: @dotColor;
+                .transit;
+                div {
+                    opacity: 1;
+                    .transit;
+                }
+            }
+        }
+
+        ul:last-of-type {
+            float: right;
+            .transit;
+            li:hover{
+                color:#424242;
+                .transit;
+            }
+            li>span {
+                font-size: 18px;
+                line-height: 52px;
+                .transit;
+            }
+            li>span:hover{
+                color: @dotColor;
+                .transit;
+            }
+            li:first-child{
+                margin-right: @lgMargin;
+                height:18px;
+                padding:36px 0;
+                .transit;
+                span {
+                    line-height: 18px;
+                    float: left;
+                    padding: 5px;
+                    background-color: @dotColor;
+                    color: #fff;
+                    .transit;
+                }
+                input {
+                    float: left;
+                    width: 150px;
+                    height: 18px;
+                    color: #7f7f7f;
+                    border: 1px solid @dotColor;
+                    padding: @xsPadding @mdPadding;
+                    .transit;
+                }
+            }
+        }
+    }
+}
+header.min {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 52px;
+    background-color: rgba(255,255,255,.75);
+    box-shadow: 0px 1px 5px rgba(200,200,200,.3);
+    nav{
+        height: 52px;
+        padding: 0;
+        h1{
+            padding:0;
+            img{
+                padding: 6px 0;
+                height: 40px;
+            }
+        }
+        ul>li{
+            height:50px;
+            padding: 0 @mdPadding ;
+        }
+        ul:last-of-type{
+            li:first-child{
+                padding:12px 0;
+            }
+        }
+    }
+}
