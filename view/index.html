@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <%-include('head.html')%>
+    <div id="cont">
+        <div id="banner">
+            <div class="middle_right">
+                <div id="lunbobox">
+                    <div class="lunbo">
+                        <% for(let i =0;i<5;i++){%>
+                        <a href="#"><img src="<%=data[i].banner%>"></a>
+                        <% }%>
+                    </div>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div id="Explosive">
+            <div class="Explosive">
+                <p>爆款推荐</p>
+            </div>
+            <p class="Explosive_p">explosion recommendation
+            </p>
+            <div class="Explosive_logo">
+                <div class="fist left">
+                    <img class="img" src="img/biao.png" alt="">
+                    <div class="fist_pohto"></div>
+                    <div class="font_one">
+                        <h3>蝶花怪味蚕豆</h3>
+                        <p>口感酥脆，层次丰富</p>
+                    </div>
+                    <div id="RMB_one">
+                        <p class="RMB">RMB</p>
+                        <p class="mony">38</p>
+                    </div>
+                </div>
+                <div class="fist zhongjian">
+                    <img class="img zhongjiantu" src="img/biao.png" alt="">
+                    <div class="fist_pohto zhongjianbeijing"></div>
+                    <div class="font_one">
+                        <h3>青海绿色花蜜</h3>
+                        <p>天然、无污染、营养丰富</p>
+                    </div>
+                    <div id="RMB_tow">
+                        <p class="RMB">RMB</p>
+                        <p class="mony">38</p>
+                    </div>
+                </div>
+                <div class="fist left">
+                    <img class="img" src="img/biao.png" alt="">
+                    <div class="fist_pohto"></div>
+                    <div class="font_one">
+                        <h3>乐平狗肉</h3>
+                        <p>体大、肥美、延年益寿</p>
+                    </div>
+                    <div id="RMB_three">
+                        <p class="RMB">RMB</p>
+                        <p class="mony">38</p>
+                    </div>
+                </div>
+                <hr />
+                <hr class="right" />
+            </div>
+            <button class="btn">更多</button>
+        </div>
+        <div id="Taste">
+            <div class="Tast">
+                <img src="img/q'q.png" alt="">
+                <p>口味侦探</p>
+            </div>
+            <p class="Explosive_p">Taste
+                detective
+            </p>
+            <div id="pohop">
+                <div id="phop">
+                    <img src="img/sydt.gif" alt="">
+                </div>
+                <p class="chakan">查看更多→</p>
+            </div>
+        </div>
+        <div id="Food">
+            <div class="Tast food_tast">
+                <img src="img/q'q.png" alt="">
+                <p>美食介绍</p>
+            </div>
+            <p class="Explosive_p food_p">Food presentation
+            </p>
+            <div class="foodleft">
+                <div class="left_pphop" id="fist">
+                    <img class="fangda" id="fistpohop" src="img/song.jpg" alt="">
+                </div>
+                <div class="left_right">
+                    <div class="div">
+                        <p>高桥松饼</p>
+                    </div>
+                    <div class="Food_font">
+                        <p>阿克苏苹果又称加丽果，具有果面光滑细腻、色泽光亮、果肉细腻、果核透明、甘甜味厚、汁多无渣等特点。富含丰富的维生素C、纤维素、果胶等。而阿克苏苹果果核透明（俗称“糖心”）则是其区别于其他产地红富士苹果的显著标志。
+                        </p>
+                    </div>
+                    <div class="understand">
+                        <p>了解更多>></p>
+                    </div>
+                </div>
+            </div>
+            <div class="foodleft diergeya">
+                <div class="left_pphop" id="dier">
+                    <img class="fangda" id="dierge" src="img/d.jpg" alt="">
+                </div>
+                <div class="left_right dierge">
+                    <div class="div divone">
+                        <p>吉林党参</p>
+                    </div>
+                    <div class="Food_font diergewenzi">
+                        <p>阿克苏苹果又称加丽果，具有果面光滑细腻、色泽光亮、果肉细腻、果核透明、甘甜味厚、汁多无渣等特点。富含丰富的维生素C、纤维素、果胶等。而阿克苏苹果果核透明（俗称“糖心”）则是其区别于其他产地红富士苹果的显著标志。
+                        </p>
+                    </div>
+                    <div class="understand understandone">
+                        <p>了解更多>></p>
+                    </div>
+                </div>
+            </div>
+            <div class="foodleft">
+                <div class="left_pphop" id="last">
+                    <img class="fangda" id="lastpohop" src="img/h.jpg" alt="">
+                </div>
+                <div class="left_right">
+                    <div class="div">
+                        <p>黄桃酒</p>
+                    </div>
+                    <div class="Food_font">
+                        <p>阿克苏苹果又称加丽果，具有果面光滑细腻、色泽光亮、果肉细腻、果核透明、甘甜味厚、汁多无渣等特点。富含丰富的维生素C、纤维素、果胶等。而阿克苏苹果果核透明（俗称“糖心”）则是其区别于其他产地红富士苹果的显著标志。
+                        </p>
+                    </div>
+                    <div class="understand">
+                        <p>了解更多>></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="experience">
+            <div id="logo_e">
+                <div id="yeelow_e">
+                </div>
+                <ul id="logoul_e">
+                    <li><img class="logo" src="img/1123.png" alt=""></li>
+                    <li>
+                        <p class="logop">小食记</p>
+                    </li>
+                </ul>
+                <p id="loge_p">experience the best food</p>
+            </div>
+            <div class="poster-btn poster-prev-btn"></div>
+            <div class="poster-main">
+                <div class="poster-btn poster-prev-btn"></div>
+                <ul class="poster-list">
+                    <li class="poster-item"><a href="#"><img src="img/r.png"></a>
+                        <span class="poster-item-title">福建肉松饼</span>
+
+                    </li>
+                    <li class="poster-item"><a href="#"><img src="img/h%20(2).jpg"></a>
+                        <span class="poster-item-title">辽宁黄桃</span>
+                    </li>
+                    <li class="poster-item"><a href="#"><img src="img/y.jpg"></a>
+                        <span class="poster-item-title">鱿鱼干</span>
+                    </li>
+                    <li class="poster-item"><a href="#"><img src="img/z.jpg"></a>
+                        <span class="poster-item-title">宁夏沙枣</span>
+                    </li>
+                    <li class="poster-item"><a href="#"><img src="img/k.jpg"></a>
+                        <span class="poster-item-title">北京烤鸭</span>
+                    </li>
+                </ul>
+                <div class="poster-btn poster-next-btn"></div>
+            </div>
+            <div id="More">
+                <p>更 多</p>
+            </div>
+        </div>
+        <div id="product">
+            <div class="Explosive product_div">
+                <p>热销产品</p>
+            </div>
+            <p class="Explosive_p product_p">hot-shop product
+            </p>
+            <div class="firstLine">
+                <div class="content">
+                    <img src="img/jht.jpg" alt="">
+                    <h4>金华黄桃酒</h4>
+                    <p>￥ 198<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+                <div class="content">
+                    <img src="img/c.jpg" alt="">
+                    <h4>精品小罐茶</h4>
+                    <p>￥ 200<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+                <div class="content">
+                    <img src="img/n.jpg" alt="">
+                    <h4>甘孜然麻辣牛肉干</h4>
+                    <p>￥ 58<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+                <div class="content">
+                    <img src="img/xg.jpg" alt="">
+                    <h4>云南宾川干香菇</h4>
+                    <p>￥ 238<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+            </div>
+            <div class="firstLine">
+                <div class="content">
+                    <img src="img/ptg.jpg" alt="">
+                    <h4>阿尔泰紫霞珠葡萄干</h4>
+                    <p>￥ 98<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+                <div class="content">
+                    <img src="img/y.jpg" alt="">
+                    <h4>广西防城港鱿鱼条</h4>
+                    <p>￥ 42<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+                <div class="content">
+                    <img src="img/ym.jpg" alt="">
+                    <h4>巴国阴米</h4>
+                    <p>￥ 68<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+                <div class="content">
+                    <img src="img/ds.jpg" alt="">
+                    <h4>吉林党参</h4>
+                    <p>￥ 20<span class="icon icon-gouwuche Shopping"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%-include('footer.html')%>
+    <script src="./plug/jquery/jquery-3.3.1.min.js"></script>
+    <script src="./plug/bootstrap/bootstrap.min.js"></script>
+    <script src="./plug/jquery/jquery-1.10.2.js"></script>
+    <script src="./js/Carousel.js"></script>
+    <script src="./js/index_js.js"></script>
+    <script src="./js/head.js"></script>
+    <script>
+        $("#More").click(() => {
+
+        })
+    </script>
+</body>
+
+</html>

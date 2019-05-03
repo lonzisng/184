@@ -4,6 +4,7 @@
 .navigation{
     width: 1200px;
     margin: auto;
+    margin-top:@lgMargin;
     position: relative;
     img{
         width: 1200px;
@@ -17,7 +18,7 @@
         background-color: rgba(0,0,0,.5);
         z-index: 999;
         p{
-            background-color: #cfa972;
+            background-color: @dotColor;
             padding:@mdPadding 0;
             text-align: center;
             font-size: @smFont;
@@ -28,12 +29,17 @@
                 padding:@smPadding;
                 h4{
                     color:@dotColor;
+                    cursor: pointer;
                 }
                 ul{
                     overflow: hidden;
                     li{
                         padding:@xsPadding @smPadding;
                         font-size:12px;
+                        cursor: pointer;
+                    }
+                    li:hover{
+                        color:@dotColor;
                     }
                 }
             }
@@ -45,19 +51,29 @@
     margin: @lgMargin auto @mdMargin;
     padding:@smPadding;
     overflow: hidden;
-    border: 1px solid #cfa972;
+    border: 1px solid @dotColor;
     border-width: 1px 0;
     li{
         padding:0 @mdPadding;
+        cursor: pointer;
         :hover{
-            color:#cfa972;
+            color:@dotColor;
         }
         .icon{
             display: inline-block;
             width: 8px;
         }
         input{
-            color:#cfa972;
+            color:@dotColor;
+        }
+        
+    }
+    li.checked{
+        color: @dotColor;
+        font-weight: bold;
+        .checked{
+            color: @dotColor;
+            font-weight: bold;
         }
     }
 }
@@ -73,6 +89,7 @@
         height: 360px;
         box-shadow: 0px 0px 10px rgba(153, 153, 153, .5);
         margin-top:@lgMargin;
+        cursor: pointer;
         h4{
             font-weight: 700;
             margin-left: 15px;
@@ -82,10 +99,11 @@
             margin-bottom: 0;
             margin: 0 15px;
             font-size: @mdFont;
+            color:@dotColor;
             .icon{
                 display: inline;
                 float: right;
-                color:#cfa972;
+                color:@dotColor;
                 font-size: @mdFont;
             }
         }

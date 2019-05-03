@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../css/Land.css">
 </head>
 <!--登录-->
 <body>
-
+<!--导航栏-->
+<header></header>
+<!--内容-->
+<section>
+    <div>
+        <div id="Land">
+            <h2>会员登录</h2>
+            <p></p>
+            <form action="/userForm.do" method="post" id="formLand">
+                <div class="user-input">
+                    <span class="icon-wode icon"></span>
+                    <input id="account" name="user" type="text" placeholder="请输入账户">
+                    <span class="helpBlock1" style="display: none"></span>
+                </div>
+                <div class="Password-input">
+                    <span class="icon-kouling icon"></span>
+                    <input id="pwd" type="password" name="pwd" placeholder="请输入密码">
+                    <span class="helpBlock2"></span>
+                </div>
+                <div>
+                    <span class="icon-xinxi icon"></span>
+                    <input id="verify" type="text" placeholder="请输入验证码">
+                    <img src="../img/xing.png" alt="">
+                    <span class="helpBlock3"></span>
+                </div>
+                <div>
+                    <p id="Add">登&nbsp;&nbsp;&nbsp;录</p>
+                </div>
+                <div>
+                    <p><span>还不是会员？</span><a href="register.html">立即注册</a><a href="">忘记密码？</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!--底部导航-->
+<footer></footer>
+<script src="../plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="../js/ajaxFn.js"></script>
+<script src="../js/login.js"></script>
 </body>
 </html>

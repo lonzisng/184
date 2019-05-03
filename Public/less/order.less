@@ -1,0 +1,145 @@
+@import "public";
+section{
+  background-color: #f2f2f2;
+}
+#order{
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0 0;
+  >div:nth-of-type(1){
+    overflow: hidden;
+  }
+  >div>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div{
+      width: 20%;
+    }
+  }
+  >div h3{
+    width: 100%;
+    font-size: @mdFont;
+    margin-bottom: 15px;
+  }
+  //收货地址
+  >div>div>div{
+    width: 20%;
+    height: 80px;
+    float: left;
+    background-color: #E4E4E4;
+    border: 1px #0099FF dashed;
+    position: relative;
+    span:nth-of-type(1){
+      position: absolute;
+      top: -20px;
+      right: 0;
+      font-size: 12px;
+      color: #C9C9C9;
+    }
+    //修改按钮
+    span:nth-of-type(2){
+      position: absolute;
+      top: 65px;
+      left: 5px;
+      font-size: 12px;
+      color: #E83518;
+      cursor: pointer;
+    }
+    span:nth-of-type(3){
+      position: absolute;
+      top: 65px;
+      right: 0px;
+      font-size: 12px;
+      color: #E83518;
+    }
+    p{
+      width: 100%;
+    }
+    P:nth-of-type(1){
+      height: 30px;
+      line-height: 30px;
+      background-color: #d7d7d7;
+    }
+  }
+  //这里是显示全部地址
+  >div>div:nth-of-type(2){
+    width: 100%;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+    color: @dotColor;
+    p:first-child{
+      cursor: pointer;
+      float: left;
+    }
+    p:last-child{
+      cursor: pointer;
+      float: right;
+    }
+  }
+  //确认商品
+  >div>div:nth-of-type(3){
+    width: 100%;
+    height: 30px;
+    font-size: @smFont;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    float: left;
+  }
+  table{
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px #D7D7D7 solid;
+    th{
+     text-align: center;
+    }
+    th:first-child{
+      text-align: left;
+    }
+  }
+}
+
+.function{
+  width: 100%;
+  height: 150px;
+  line-height: 40px;
+  margin-top: 20px;
+  border-top: 1px #D7D7D7 solid;
+  position: relative;
+  overflow: hidden;
+ p{
+   width: 15%;
+   height: 40px;
+   text-align: center;
+   position: absolute;
+ }
+  p:nth-of-type(1){
+    font-size: 18px;
+    top: 0px;
+    right: 60px;
+    span:nth-of-type(2){
+      font-size: 22px;
+      color: #E83518;
+      margin-left: 10px;
+    }
+  }
+  p:nth-of-type(2){
+    top: 65px;
+    right: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    background-color: @dotColor;
+  }
+  a{
+    position: absolute;
+    top: 75px;
+    font-size: @xsFont;
+    color: #90D81D;
+    right: 20%;
+  }
+}

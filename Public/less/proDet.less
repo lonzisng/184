@@ -1,0 +1,321 @@
+@import "public";
+section{
+    width:1200px;
+    margin: @lgMargin auto 0;
+    overflow: hidden;
+}
+.option{
+    .pic{
+        width: 460px;
+        margin-right: 20px;
+        float:left;
+        .small_box {
+            width: 460px;
+            height: 360px;
+            position: relative;
+        }
+        .small_box img {
+            width: 460px;
+            height: 360px;
+        }
+        .small_box .mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            z-index: 2;
+            cursor: move;
+        }
+        .small_box .float_layer {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        .big_box {
+            position: absolute;
+            left: 550px;
+            top: 40px;
+            width: 400px;
+            height: 390px;
+            overflow: hidden;
+            display: none;
+        }
+        .big_box img {
+            position: absolute;
+        }
+        .imglist{
+            display: flex;
+            justify-content: space-between;
+            padding: @smPadding 0;
+            li{
+                width: 19%;
+                float: left;
+                filter: brightness(.8);
+                img{
+                    width: 100%;
+                    height:80px;
+                }
+            }
+            li:hover{
+                filter: brightness(1);
+            }
+            li.checked{
+                filter: brightness(1);
+            }
+        }
+    }
+    .console{
+        width: 520px;
+        float:left;
+        overflow: hidden;
+        .tag{
+            font-size: 12px;
+            background-color: @dotColor;
+            color:#fff;
+            padding:@xsPadding;
+        }
+        h3{
+            font-size: @mdFont;
+            line-height: 40px;
+            padding:@xsPadding 0;
+        }
+        >p{
+            padding:@xsPadding 0;
+        }
+        .price{
+            background-color: #e1e1e1;
+            padding:@smPadding @xsPadding;
+            overflow: hidden;
+            >div:first-child{
+                float: left;
+                .nowPrice{
+                    padding:@xsPadding 0;
+                    span:not(:last-child){
+                        padding-right: @smPadding;
+                        font-size: @mdFont;
+                    }
+                    span:nth-child(2),span:nth-child(3){
+                        color:#e83518;
+                        font-weight: bold;
+                    }
+                    span:last-child{
+                        padding-left:@smPadding;
+                        color:#5f6faf;
+                        cursor: pointer;
+                    }
+                    
+                }
+                div:last-child{
+                    color:#565656;
+                    span:not(:first-child){
+                        text-decoration: line-through;
+                    }
+                    span:nth-child(2){
+                        padding-left: @smPadding;
+                    }
+                }
+            }
+            >div:last-child{
+                float:right;
+                padding:0 @mdPadding;
+                border-left: 1px solid #aaa;
+                div:first-child{
+                    padding:@xsPadding 0;
+                    color:#424242;
+                }
+                div:last-child{
+                    color:#5f6faf;
+                    cursor: pointer;
+                }
+            }
+        }
+        .area{
+            padding:@xsPadding;
+            margin-top:@xsMargin;
+            overflow: hidden;
+            div{
+                float: left;
+                padding:@xsPadding 0;
+            }
+            div:first-child{
+                width: 15%;
+            }
+            .area-text{
+                border: 1px solid #a1a1a1;
+                padding-left: @xsPadding;
+                padding-right: @xsPadding;
+                margin-right: @smMargin;
+                cursor: pointer;
+            }
+            .area-text::after{
+                content: "\e65e";
+                padding-left: @xsPadding;
+            }
+            div:last-child{
+                font-size:13px;
+                font-weight: bold;
+            }   
+        }
+        .sort{
+            padding:@xsPadding;
+            margin-top:@xsMargin;
+            overflow: hidden;
+            div{
+                width: 15%;
+                float: left;
+                margin:@smMargin 0;
+                padding:@smPadding 0;
+            }
+            ul{
+                width: 85%;
+                float: left;
+                padding:@xsPadding 0;
+                overflow: hidden;
+                li{
+                    border: 1px solid #a1a1a1;
+                    width: 120px;
+                    text-align: center;
+                    padding: @xsPadding;
+                    margin:@smMargin 0;
+                    margin-right: @smMargin;
+                    cursor: pointer;
+                }
+                li.checked{
+                    border: 1px solid @dotColor;
+                    color:#fff;
+                    background-color: @dotColor;
+                }
+            }
+        }
+        .amount{
+            user-select: none;
+            -webkit-user-select: none;
+            padding:@xsPadding;
+            margin-top:@xsMargin;
+            overflow: hidden;
+            div{
+                float: left;
+                padding:@xsPadding 0;
+                span,input{
+                    display: inline-block;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                input{
+                    width: 36px;
+                    padding:4px;
+                    border: 1px solid #999;
+                    border-color:#999 #fff;
+                }
+                span{
+                    width: 20px;
+                    padding:@xsPadding;
+                    border: 1px solid #999;
+                }
+                span:hover{
+                    background-color: @dotColor;
+                    color: #fff;
+                    border-color:@dotColor;
+                }
+            }
+            div:first-child{
+                width: 15%;
+                padding:@smPadding 0;
+            }
+        }
+        .buy{
+            padding:@xsPadding;
+            padding-left: 15%;
+            margin-top:@xsMargin;
+            overflow: hidden;
+            div{
+                float: left;
+                padding:@xsPadding 0;
+                margin: @bgMargin 0;
+                margin-right: @lgMargin;
+                padding:@smPadding @lgPadding;
+                border: 1px solid @dotColor;
+                width: 108px;
+                text-align: center;
+                font-size: @mdFont;
+                cursor: pointer;
+            }
+            .cart{
+                background-color: @dotColor;
+                color: #fff;
+            }
+            .toPay{
+                color:@dotColor;
+            }
+        }
+    }
+    .shareBar::before{
+        content:"";
+        display: block;
+        clear: both;
+    }
+    .shareBar{
+        width: 460px;
+        text-align: center;
+        span{
+            margin: @xsMargin @lgMargin;
+            color: @dotColor;
+        }
+        span::before{
+            padding:0 @xsPadding;
+        }
+    }
+}
+.details{
+    overflow: hidden;
+    .tag{
+        ul{
+            overflow: hidden;
+            border-bottom: 3px solid @dotColor;
+            li{
+                margin-right: @mdMargin;
+                padding: @smPadding;
+                padding-left: 0;
+                font-size: @smFont;
+                span{
+                    padding-left: @xsPadding;
+                    font-size: @smFont;
+                    color:#5f6faf;
+                }
+            }
+            li.checked{
+                color: @dotColor;
+                font-weight: bold;
+            }
+        }
+    }
+    .message{
+        overflow: hidden;
+        line-height: 30px;
+        .attribute{
+            padding:@mdPadding;
+            background-color: #f1f1f1;
+            ul{
+                overflow: hidden;
+                li{
+                    padding-left: @smPadding;
+                    width:45%;
+                    line-height: 24px;
+                }
+            }
+        }
+        .discription{
+            padding: @mdPadding 0;
+            p{
+                padding:@mdPadding @lgPadding*4
+            }
+            div>img{
+                width: 1200px;
+            }
+        }
+    }
+}
+

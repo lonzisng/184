@@ -62,8 +62,8 @@
             this.DOM.slides[this.current].classList.add('slide--current');
             this.uncoverItems[this.current].show(true, {
                 image: {
-                    duration: 800,
-                    delay: 350,
+                    duration: 400,
+                    delay: 0,
                     easing: 'easeOutCubic',
                     scale: [1.3,1]
                 }
@@ -132,6 +132,115 @@
         let auto = setInterval(function(){
             newpos = slideshow.current < slideshow.slidesTotal-1 ? slideshow.current+1 : 0;
             slideshow.navigate(newpos);
+            pagination.querySelector('.pagination__item--current').classList.remove('pagination__item--current');
+            triggers[newpos].classList.add('pagination__item--current');
         },4000);
     });
 }
+
+$(function(){
+    let products=$("#products"),order="order=undefined";
+    $("#complex").click(()=>{
+        goodsFn("complex");
+    });
+    $("#new").click(()=>{
+        goodsFn("new");
+    });
+    $("#volume").click(()=>{
+        goodsFn("volume");
+    });
+    $("#price").click(()=>{
+        order="order=0";
+        priceFn(order);
+    });
+    $("#priceDown").click(()=>{
+        order="order=1";
+        priceFn(order);
+    });
+    $("#priceUp").click(()=>{
+        order="order=0";
+        priceFn(order);
+    });
+
+    $("#upperPrice").blur(()=>{
+        let lowerPrice = $("#lowerPrice").val(),
+            upperPrice = $("#upperPrice").val();
+        let parameter = order+"&lower="+lowerPrice+"&upper="+upperPrice;
+        console.log(parameter);
+        priceFn(parameter);
+    });
+
+    function goodsFn(res){
+        order="order=undefined";
+        if($("#"+res).hasClass("checked")){
+            return;
+        }else{
+            $("#"+res).addClass("checked").siblings().removeClass("checked");
+        }
+        $.ajax({
+            url:"/allProducts/"+res+".do",
+            type:"post",
+            data:null,
+            cache:false,
+            processData: false,
+            contentType: false,
+            success:(data)=>{
+                if(data.code===200){
+                    let html="";
+                    for(let i=0;i< data.data.length;i++){
+                        html += `<div class="goods" data-id="${data.data[i].id}">
+                                    <img src="../img/goods${data.data[i].src}" alt="" />
+                                    <h4>${data.data[i].name}</h4>
+                                    <p>￥ ${data.data[i].price}<span class="icon icon-gouwuche shopcard"></span></p>
+                                </div>`;
+                    }
+                    products.html(html);
+                }else{
+                    console.log(data.message);
+                }
+            }
+        })
+    }
+    function priceFn(parameter){
+        if(order=="order=0"){
+            if($("#priceUp").hasClass("checked")){
+                return;
+            }else{
+                $("#priceUp").addClass("checked");
+                $("#priceDown").removeClass("checked");
+            }
+        }
+        if(order=="order=1"){
+            if($("#priceDown").hasClass("checked")){
+                return;
+            }else{
+                $("#priceDown").addClass("checked");
+                $("#priceUp").removeClass("checked");
+            }
+        }
+        console.log(parameter);
+        $.ajax({
+            url:"/allProducts/price.do",
+            type:"post",
+            data:parameter+"",
+            cache:false,
+            processData: false,
+            contentType: false,
+            success:(data)=>{
+                if(data.code===200){
+                    let html="";
+                    for(let i=0;i< data.data.length;i++){
+                        html += `<div class="goods" data-id="${data.data[i].id}">
+                                    <img src="../img/goods${data.data[i].src}" alt="" />
+                                    <h4>${data.data[i].name}</h4>
+                                    <p>￥ ${data.data[i].price}<span class="icon icon-gouwuche shopcard"></span></p>
+                                </div>`;
+                    }
+                    products.html(html);
+                }else{
+                    console.log(data.message);
+                }
+            }
+        })
+    }
+})

@@ -1,0 +1,108 @@
+@import "public";
+*{
+  padding: 0;
+  margin: 0;
+}
+section>div{
+  width: 100%;
+  padding-top: 5%;
+  height: 550px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #bcbcbc;
+}
+#Register{
+  width: 340px;
+  height: 420px;
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  padding-left: 20px;
+  margin-left: 58%;
+  padding-top: 20px;
+  box-shadow: 5px 5px 5px #888888;
+  >p{
+    width: 360px;
+    height: 1px;
+    margin-left: -20px;
+    background-color: #d7d7d7;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  >h2{
+    color: #CFA972;
+  }
+}
+
+#formRegister{
+  >div{
+    margin: 6% 0%;
+    position: relative;
+    >span{
+      position: absolute;
+      top: 31px;
+      left: 0px;
+      color: #E83518;
+      font-size: 14px;
+
+    }
+  }
+  select{
+    width: 35%;
+    height: 32px;
+    vertical-align: top;
+  }
+  div:nth-of-type(1) input{
+    margin-left: -5px;
+    width: 59%;
+  }
+  div:nth-of-type(2) input{
+    width: 30%;
+  }
+  div:nth-of-type(2) p{
+    width: 20%;
+    height: 30px;
+    float: right;
+    margin-right: 47%;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    background-color: #169bd5;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input{
+    width: 94%;
+    height: 30px;
+    border: 1px #bcbcbc solid;
+  }
+  div:nth-of-type(5){
+    cursor: pointer;
+  }
+  div:nth-of-type(5) input{
+    width: 12px;
+    height: 12px;
+    margin-right: 2%;
+  }
+  div:nth-of-type(7){
+    margin-top: 10%;
+  }
+  div:nth-of-type(6) p{
+    width: 94%;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    background-color: @dotColor;
+    cursor: pointer;
+  }
+  div:nth-of-type(7) span{
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  div:nth-of-type(7) a{
+    font-size: 16px;
+    color: #E83518;
+  }
+}
