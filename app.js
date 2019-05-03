@@ -13,7 +13,7 @@ const allProductsRouter = require("./route/allProductsRouter");
 const loginRouter = require("./route/loginRouter");
 const userRouter = require("./route/userRouter");
 const indexRoute =require("./route/indexRoute");
-// const goodsRouter = require("./route/goodsRouter");
+const goodsDetailRouter = require("./route/goodsDetailRouter");
 
 
 // 服务配置
@@ -39,13 +39,15 @@ app.use(indexRoute);
 app.use("/head",headRouter);
 app.use(loginRouter);
 app.use("/allProducts",allProductsRouter);
+app.use(goodsDetailRouter);
 app.get("/userCenter.html",(req,res)=>{
     res.render("userCenter");
 });
+
 //个人中心路由
 app.use("/user",userRouter);
 app.use(myEx.static(__dirname + "/public"));
 // 服务监听
 app.listen(8080, () => {
-    console.log("服务已启动");
+    console.log("server is runing");
 })

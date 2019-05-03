@@ -48,8 +48,10 @@ $(function(){
         $(this).siblings().removeClass("checked");
         $(this).addClass("checked");
         let arr = $(this).attr("data-price").split("&");
+        let stock = $(this).attr("title").split("：")[1];
         $("#newPrice").text(arr[0]);
         $("#oldPrice").text(arr[1]);
+        $("#stock").text(stock);
     })
 
     $("#reduce").click(function(){
@@ -62,6 +64,18 @@ $(function(){
     $("#add").click(function(){
         let num = $("#num").val();
         $("#num").val(++num);
+    })
+    $("#messageTag").click(()=>{
+        $("#messageBox").show();
+        $("#reviewBox").hide();
+        $("#messageTag").addClass("checked");
+        $("#reviewTag").removeClass("checked");
+    })
+    $("#reviewTag").click(()=>{
+        $("#messageBox").hide();
+        $("#reviewBox").show();
+        $("#messageTag").removeClass("checked");
+        $("#reviewTag").addClass("checked");
     })
 
 })

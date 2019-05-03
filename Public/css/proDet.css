@@ -280,7 +280,6 @@ button {
 section {
   width: 1200px;
   margin: 32px auto 0;
-  overflow: hidden;
 }
 .option .pic {
   width: 460px;
@@ -364,7 +363,7 @@ section {
   padding: 4px 0;
 }
 .option .console .price {
-  background-color: #e1e1e1;
+  background-color: #f1f1f1;
   padding: 8px 4px;
   overflow: hidden;
 }
@@ -391,11 +390,15 @@ section {
 .option .console .price > div:first-child div:last-child {
   color: #565656;
 }
-.option .console .price > div:first-child div:last-child span:not(:first-child) {
+.option .console .price > div:first-child div:last-child span:nth-child(2),
+.option .console .price > div:first-child div:last-child span:nth-child(3) {
   text-decoration: line-through;
 }
 .option .console .price > div:first-child div:last-child span:nth-child(2) {
   padding-left: 8px;
+}
+.option .console .price > div:first-child div:last-child span:nth-child(4) {
+  padding-left: 32px;
 }
 .option .console .price > div:last-child {
   float: right;
@@ -546,9 +549,6 @@ section {
 .option .shareBar span::before {
   padding: 0 4px;
 }
-.details {
-  overflow: hidden;
-}
 .details .tag ul {
   overflow: hidden;
   border-bottom: 3px solid #cfa972;
@@ -558,6 +558,7 @@ section {
   padding: 8px;
   padding-left: 0;
   font-size: 16px;
+  cursor: pointer;
 }
 .details .tag ul li span {
   padding-left: 4px;
@@ -592,4 +593,64 @@ section {
 }
 .details .message .discription div > img {
   width: 1200px;
+}
+.details .review {
+  display: none;
+}
+.details .review li {
+  box-shadow: 0px 2px 4px #cfa972;
+  border-radius: 5px;
+  margin: 16px 0;
+  float: none;
+  padding: 16px;
+}
+.details .review li .avatar {
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.details .review li .avatar div {
+  padding-right: 16px;
+  float: left;
+}
+.details .review li .avatar div img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  vertical-align: top;
+}
+.details .review li .avatar .user {
+  line-height: 30px;
+}
+.details .review li .avatar .user span:first-child {
+  font-size: 16px;
+  margin-right: 16px;
+}
+.details .review li .avatar .user span:nth-child(2) {
+  font-size: 20px;
+  color: #cfa972;
+}
+.details .review li .avatar .user span:last-child {
+  float: right;
+  color: #9f9f9f;
+  margin-right: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.details .review li .avatar .user span:last-child::before {
+  padding-right: 4px;
+}
+.details .review li .avatar .data > span {
+  padding-right: 8px;
+  line-height: 18px;
+  font-size: 12px;
+  color: #424242;
+}
+.details .review li .content {
+  padding: 8px 0;
+  line-height: 30px;
+}
+.details .review li .imgList img {
+  width: 280px;
+  margin-right: 10px;
+  margin-top: 10px;
 }

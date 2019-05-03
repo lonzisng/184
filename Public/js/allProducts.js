@@ -218,7 +218,6 @@ $(function(){
                 $("#priceUp").removeClass("checked");
             }
         }
-        console.log(parameter);
         $.ajax({
             url:"/allProducts/price.do",
             type:"post",

@@ -44,7 +44,6 @@ module.exports = {
         let lower = req.body.lower,
             upper = req.body.upper,
             order = req.body.order;
-        console.log(req.body);
         allProductsModel.price(lower,upper,order,(err,data)=>{
             if(!err){
                 if(data.length>0){

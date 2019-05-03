@@ -84,36 +84,11 @@
     <section id="products" class="products">
         <% for (let i=0;i < goods.length;i++) {%>
             <div class="goods" data-id="<%=goods[i].id%>">
-                <img src="../img/goods/<%=goods[i].src%>" alt="" />
-                <h4><%=goods[i].name%></h4>
+                <a href="/goodsDetail.do?g=<%=goods[i].id%>"><img src="../img/goods/<%=goods[i].src%>" alt="" /></a>
+                <h4><a href="/goodsDetail?g=<%=goods[i].id%>"><%=goods[i].name%></a></h4>
                 <p>￥ <%=goods[i].price%><span class="icon icon-gouwuche shopcard"></span></p>
             </div>
         <% } %>
-        <!-- <div class="goods">
-            <img src="../img/00033.jpg" alt="" />
-            <h4>金华黄桃酒</h4>
-            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
-        </div>
-        <div class="goods">
-            <img src="../img/00033.jpg" alt="" />
-            <h4>金华黄桃酒</h4>
-            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
-        </div>
-        <div class="goods">
-            <img src="../img/00033.jpg" alt="" />
-            <h4>金华黄桃酒</h4>
-            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
-        </div>
-        <div class="goods">
-            <img src="../img/00033.jpg" alt="" />
-            <h4>金华黄桃酒</h4>
-            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
-        </div>
-        <div class="goods">
-            <img src="../img/00033.jpg" alt="" />
-            <h4>金华黄桃酒</h4>
-            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
-        </div> -->
     </section>
     <%-include("footer.html")%>
     <script src="../plug/jquery/jquery-3.3.1.min.js"></script>
@@ -121,5 +96,6 @@
     <script src="../js/allProducts-anime.min.js"></script>
     <script src="../js/allProducts-uncover.js"></script>
     <script src="../js/allProducts.js"></script>
+    <script src="../js/head.js"></script>
 </body>
 </html>
