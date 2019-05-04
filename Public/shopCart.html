@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/shop.css">
+</head>
+<!--购物车-->
+<body>
+<!--导航栏-->
+<header></header>
+<!--内容-->
+<section>
+    <div>
+        <form action="/order.do" method="post" id="form1">
+            <div id="Shop">
+                <div>
+                    <h3>全部商品</h3>
+                    <p></p>
+                    <table align="left">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" class="checkall" checked="checked"><span>全选</span></th>
+                            <th>商品信息</th>
+                            <th>单价</th>
+                            <th>数量</th>
+                            <th style="color: #E83518">小计</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="displayGoods"></tbody>
+                    </table>
+                </div>
+                <div class="function">
+                    <span><input type="checkbox" class="checkall"><span>全选</span></span>
+                    <span style="cursor: pointer">删除</span>
+                    <span style="cursor: pointer">加入收藏</span>
+                    <div>
+                        <p><span></span><span style="color: #ff4400"></span><span></span></p>
+                        <p><span>共计</span><span style="color: #ff4400" id="price"></span><span>件商品</span></p>
+                        <p><span style="color: #ff4400">总计:</span><span style="color: #ff4400" id="zongjia"></span></p>
+                        <p id="Settlement"><a href="order.html">结算</a></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!--底部导航-->
+<footer></footer>
+<script src="../plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="../js/ajaxFn.js"></script>
+<script src="../js/shopCart.js"></script>
+</body>
+</html>

@@ -1,8 +1,13 @@
-const unloginModel = require("../model/headModel");
+const headModel = require("../model/headModel");
 module.exports= {
     search(req,res){
-        let arr=req.body.arr;
-        unloginModel.search(arr,(err,data)=>{
+        let arr=[];
+        for (const key in req.body) {
+            arr[key] = "%"+req.body[key]+"%";
+        }
+        console.log(req.body);
+        console.log(arr);
+        headModel.search(arr,(err,data)=>{
             if(!err){
                 if(data.length>0){
                     res.send(data);

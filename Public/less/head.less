@@ -139,7 +139,7 @@ header.min {
                 height: 40px;
             }
         }
-        ul>li{
+        ul li{
             height:50px;
             padding: 0 @mdPadding ;
         }
@@ -147,6 +147,36 @@ header.min {
             li:first-child{
                 padding:12px 0;
             }
+        }
+    }
+}
+aside {
+    position: fixed;
+    bottom: 20px;
+    right: -webkit-calc(~"(100% - 1200px) / 2 - 50px");//加~"" 使less不编译calc函数，交由浏览器执行（大概是这样）
+    z-index: 99999;
+    li{
+        float:none;
+        width: 25px;
+        height:25px;
+        background-color: @dotColor;
+        border:1px solid @dotColor;
+        margin-bottom: 10px;
+        a.icon{  
+            display: inline-block;
+            width: 25px;
+            line-height:25px;
+            font-size: @smFont;
+            text-align: center;
+            color: #fff;
+        }
+        
+    }
+    li:hover{
+        background-color: rgba(0,0,0,0);
+        border:1px solid @dotColor;
+        a.icon{
+            color:@dotColor;
         }
     }
 }

@@ -20,10 +20,14 @@ ul>li{
 }
 //input样式
 input{
-  outline:black;
-  border: 1px solid @borderColor;
+  outline:black !important;
+  border: 1px solid @borderColor !important;
   width: 165px;
   height: 25px;
+}
+.input{
+  width: 15px;
+  height:15px;
 }
 //按钮
 button{
@@ -34,6 +38,9 @@ button{
   line-height: 25px;
   margin: @lgMargin;
 }
+.colorLi{
+  color:@dotColor;
+};
 //section
 section{
   width: 1200px;
@@ -41,6 +48,7 @@ section{
   .clear();
   .center();
   >div{
+    margin-top:@lgMargin ;
     float: left;
     margin-left: 3%;
     >p{
@@ -149,6 +157,9 @@ section{
     width: 110px;
     height: 90px;
   }
+  p{
+    font-size: 12px;
+  }
 }
 //我的收藏
 .myCollection{
@@ -238,8 +249,8 @@ section{
           font-size: @xsFont;
         }
         tr:nth-last-child(2) input{
-          width: 15px;
-          height:15px;
+          .input();
+
         }
         tr:nth-last-child(1) td{
           border-top: 1px solid @borderColor;
@@ -469,12 +480,15 @@ section{
    }
     img{
       width: 130px;
-      height: 120px;
+      height: 130px;
+    }
+    span{
+      opacity: 0;
+      color: red;
     }
   }
   tr:nth-of-type(3) input{
-    width: 15px;
-    height:15px;
+   .input();
   }
 }
 .save{
@@ -499,6 +513,33 @@ section{
       border-top: 1px solid @borderColor;
     }
   }
+}
+#photo {
+  max-width:100%;
+  max-height:350px;
+}
+.img-preview-box {
+  text-align: center;
+}
+.img-preview-box > div {
+  display: inline-block;;
+  margin-right: 10px;
+}
+.img-preview {
+  overflow: hidden;
+}
+.img-preview-box .img-preview-lg {
+  width: 150px;
+  height: 150px;
+}
+.img-preview-box .img-preview-md {
+  width: 100px;
+  height: 100px;
+}
+.img-preview-box .img-preview-sm {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 //分页
 .divPage{

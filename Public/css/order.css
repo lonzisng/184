@@ -266,6 +266,7 @@ button {
   content: "\e69c";
 }
 section {
+  height: 100%;
   background-color: #f2f2f2;
 }
 #order {
@@ -274,17 +275,26 @@ section {
   padding: 10px 0 0;
 }
 #order > div:nth-of-type(1) {
+  position: relative;
   overflow: hidden;
 }
-#order > div > div {
+#order > div:nth-of-type(1) #addres {
+  padding-top: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+#order > div:nth-of-type(1) #addres > .address {
+  margin-bottom: 30px;
+}
+#order > div:nth-of-type(1) > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-#order > div > div div {
+#order > div:nth-of-type(1) > div div {
   width: 20%;
 }
-#order > div h3 {
+#order > div:nth-of-type(1) h3 {
   width: 100%;
   font-size: 20px;
   margin-bottom: 15px;
@@ -294,7 +304,6 @@ section {
   height: 80px;
   float: left;
   background-color: #E4E4E4;
-  border: 1px #0099FF dashed;
   position: relative;
 }
 #order > div > div > div span:nth-of-type(1) {
@@ -304,7 +313,7 @@ section {
   font-size: 12px;
   color: #C9C9C9;
 }
-#order > div > div > div span:nth-of-type(2) {
+#order > div > div > div a {
   position: absolute;
   top: 65px;
   left: 5px;
@@ -312,11 +321,11 @@ section {
   color: #E83518;
   cursor: pointer;
 }
-#order > div > div > div span:nth-of-type(3) {
+#order > div > div > div span:nth-of-type(2) {
   position: absolute;
-  top: 65px;
+  top: 60px;
   right: 0px;
-  font-size: 12px;
+  font-size: 18px;
   color: #E83518;
 }
 #order > div > div > div p {
@@ -332,7 +341,6 @@ section {
   height: 30px;
   float: left;
   line-height: 30px;
-  margin-top: 20px;
   overflow: hidden;
   color: #cfa972;
 }
@@ -349,20 +357,37 @@ section {
   height: 30px;
   font-size: 16px;
   line-height: 30px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 15px;
   float: left;
 }
 #order table {
   width: 100%;
   padding-bottom: 5px;
-  border-bottom: 1px #D7D7D7 solid;
 }
 #order table th {
   text-align: center;
 }
 #order table th:first-child {
   text-align: left;
+}
+#order table #displayGoods td {
+  position: relative;
+  padding: 10px 0px;
+  line-height: 50px;
+  text-align: center;
+}
+#order table #displayGoods td img {
+  width: 100px;
+  height: 100px;
+}
+#order table #displayGoods td:first-child {
+  text-align: left;
+}
+#order table #displayGoods td:first-child span {
+  position: absolute;
+  top: 25%;
+  left: 120px;
 }
 .function {
   width: 100%;
@@ -382,7 +407,7 @@ section {
 .function p:nth-of-type(1) {
   font-size: 18px;
   top: 0px;
-  right: 60px;
+  right: 70px;
 }
 .function p:nth-of-type(1) span:nth-of-type(2) {
   font-size: 22px;
@@ -403,4 +428,174 @@ section {
   font-size: 14px;
   color: #90D81D;
   right: 20%;
+}
+section > div {
+  position: relative;
+}
+section > div #payment {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+section > div #payment > div {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+section > div #payment > div > ul {
+  position: relative;
+  margin-top: 5%;
+}
+section > div #payment > div > ul > li:first-child span:nth-of-type(3) {
+  position: absolute;
+  right: 2%;
+  top: -2%;
+  font-size: 24px;
+  color: #FF8208;
+  margin-left: 50%;
+  margin-right: 0.5%;
+}
+section > div #payment > div > ul > li:first-child span:nth-of-type(4) {
+  position: absolute;
+  right: 0%;
+  top: 5%;
+  font-size: 14px;
+}
+section > div #payment > div > ul > li {
+  float: none;
+}
+section > div #payment > div > ul > li > span {
+  font-size: 12px;
+  text-align: right;
+}
+section > div #payment > div > ul > li > span:first-child {
+  margin-right: 10%;
+}
+section > div #payment > div > div:nth-of-type(1) {
+  margin-top: 2%;
+}
+section > div #payment > div > div:nth-of-type(1) > div:first-child {
+  border: 1px #0099FF solid;
+}
+section > div #payment > div > div:nth-of-type(1) > div {
+  overflow: hidden;
+  padding: 5px;
+}
+section > div #payment > div > div:nth-of-type(1) > div > p {
+  font-size: 12px;
+  margin-right: 4%;
+  float: left;
+}
+section > div #payment > div > div:nth-of-type(1) > div > p:first-child {
+  margin-left: 2%;
+}
+section > div #payment > div > div:nth-of-type(1) > div > p:first-child input {
+  width: 10px;
+  height: 10px;
+}
+section > div #payment > div > div:nth-of-type(1) > div > p:last-child {
+  color: #E83518;
+  margin-left: 25%;
+  margin-right: 0px;
+}
+section > div #payment > div > div:nth-of-type(1) > div > p:last-child span:first-child {
+  margin-right: 5px;
+}
+section > div #payment > div > div:nth-of-type(2) {
+  margin-top: 2%;
+  overflow: hidden;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  border-top: 1px #d7d7d7 solid;
+}
+section > div #payment > div > div:nth-of-type(2) > p {
+  font-size: 12px;
+  color: #0099FF;
+  float: left;
+}
+section > div #payment > div > div:nth-of-type(2) > p:first-child {
+  margin-left: 5%;
+}
+section > div #payment > div > div:nth-of-type(2) > p:last-child {
+  margin-right: 5%;
+  float: right;
+}
+section > div #payment > div > div:nth-of-type(3) {
+  overflow: hidden;
+}
+section > div #payment > div > div:nth-of-type(3) > p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+section > div #payment > div > div:nth-of-type(3) > div input:first-child {
+  margin-left: 5%;
+}
+section > div #payment > div > div:nth-of-type(3) > div input {
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border: 1px #00FFFF solid;
+  float: left;
+}
+section > div #payment > div > div:nth-of-type(3) > div a {
+  margin-left: 15px;
+  color: #00CCFF;
+  font-size: 12px;
+}
+section > div #payment > div > div:nth-of-type(4) {
+  text-align: center;
+  line-height: 25px;
+  width: 14%;
+  height: 25px;
+  margin-top: 10px;
+  font-size: 12px;
+  float: right;
+  cursor: pointer;
+  color: white;
+  background-color: #cfa972;
+}
+section > div #paymentt {
+  width: 25%;
+  height: 30%;
+  color: #0C0C0C;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 10;
+  margin: auto;
+  display: none;
+  background-color: white;
+}
+section > div #paymentt > p {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+section > div #paymentt > p:first-child {
+  margin-top: 10%;
+  font-size: 20px;
+}
+.kuang {
+  border: 2px #0099FF dashed;
+}
+.yin {
+  display: none;
+}
+.xian {
+  display: block;
+}
+.height {
+  height: 100px;
+}
+.H {
+  height: 108px;
+  overflow: hidden;
 }

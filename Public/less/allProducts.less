@@ -90,6 +90,7 @@
         box-shadow: 0px 0px 10px rgba(153, 153, 153, .5);
         margin-top:@lgMargin;
         cursor: pointer;
+        color: #424242;
         h4{
             font-weight: 700;
             margin-left: 15px;
@@ -104,12 +105,31 @@
                 display: inline;
                 float: right;
                 color:@dotColor;
-                font-size: @mdFont;
+                font-size: 24px;
             }
         }
-        img{
+        div{
             width: 260px;
             height: 300px;
+            overflow: hidden;
+            img{
+                width: 260px;
+                height: 300px;
+                transition: all .5s linear;
+            }
+        }
+        
+    }
+    .goods:hover{
+        box-shadow: 0px 0px 10px @dotColor;
+        div>img{
+            transform: scale(1.1);
+        }
+        h4{
+            color:@dotColor;
+        }
+        p{
+            font-size: @smFont;
         }
     }
 }

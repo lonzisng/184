@@ -11,12 +11,12 @@
 <section>
     <div class="left">
         <p>
-            吃货一枚
+            <%=userName%>
             <span></span>
         </p>
         <div class="leftNav">
             <div class="tou">
-                <img src="../img/touXiang.jpg" alt="">
+                <img src="../img/<%=Tou%>" alt="">
             </div>
             <div class="menu" id="menu">
                 <ul>
@@ -73,7 +73,10 @@
 <script src="js/myAccount.js"></script>
 <script type="text/javascript">
         var myOrderList=[]; //订单列表
-
+        var MyCollection=[];//收藏列表
+        var MyAddress=[]; //地址列表
+        var MyArticle=[];//文章列表
+        var count;//账号
         $(document).ready(function () {
             checkColor();
             skipPage();
@@ -97,6 +100,7 @@
                     // 我的订单
                     case "1":
                         $(".right").append(`  <%-include('myOrder.html')%>`);
+                        getMyOrder();
                         break;
                         //待付款
                     case "1.1":
@@ -125,10 +129,12 @@
                     // 我的收藏
                     case "2":
                         $(".right").append(`  <%-include('myCollection.html')%>`);
+                        getMyCollection();
                         break;
                     // 我的地址
                     case "3":
                         $(".right").append(`  <%-include('myAddress.html')%>`);
+                        getMyAddress();
                         break;
                     //我的物流
                     case "4":
@@ -137,6 +143,7 @@
                     // 我的文章
                     case "5":
                         $(".right").append(`  <%-include('myArticle.html')%>`);
+                        getMyArticle();
                         break;
                     case "5.1":
                         console.log(id);
@@ -148,6 +155,7 @@
                     // 账号信息
                     case "6":
                         $(".right").append(`  <%-include('myAccount.html')%>`);
+                        getMyCount();
                         break;
                 }
                 return false;
@@ -165,18 +173,11 @@
                 }
             });
        }
-        //转换时间为yyyy-mm-dd
-       function fmtDate(obj){
-            var date =  new Date(obj);
-            var y = 1900+date.getYear();
-            var m = "0"+(date.getMonth()+1);
-            var d = "0"+date.getDate();
-            return y+"-"+m.substring(m.length-2,m.length)+"-"+d.substring(d.length-2,d.length);
-        }
        function dispalyMyOrder(){
             $("#myOrderTbody").html("");
             for(let i=0;i<myOrderList.length;i++){
                 // console.log(i);
+                $(".confirmReceipt").html("");
                 $("#myOrderTbody").append(`
                 <tr>
                 <td colspan="2">
@@ -185,6 +186,7 @@
                 </td>
                 </tr>
                 <tr>
+                <td hidden>${myOrderList[i].order_id}</td>
                 <td><img src="../img/goods${myOrderList[i].route}" alt=""></td>
                 <td>
                     <span>[${myOrderList[i].name}]</span><br/>
@@ -193,19 +195,257 @@
                 <td>￥${myOrderList[i].price}</td>
                 <td>${myOrderList[i].goods_num}</td>
                 <td>
-                ￥${myOrderList[i].total_price}
+                ￥${myOrderList[i].price*myOrderList[i].goods_num}
                 <p>(含运费:￥${myOrderList[i].postage})</p>
                 </td>
                 <td>
-                        ${myOrderList[i].state}
+                        <p class="state"></p>
                         <p>查看详情</p>
                 </td>
                 <td>
-                    <a href="#" class="confirmReceipt">确认收货</a>
+                    <a href="#" class="confirmReceipt" data_state="${myOrderList[i].state}"></a>
                 </td>
             </tr>
-                `)
+                `);
+                switch (myOrderList[i].state) {
+                    case 1:$(".state").html("待付款");
+                        $(".confirmReceipt").html("等待买家付款");
+                        break;
+                    case 2:$(".state").html("买家已付款付款");
+                        $(".confirmReceipt").html("再次购买");
+                        break;
+                    case 3:$(".state").html("查看物流");
+                        $(".confirmReceipt").html("确认收货");
+                        break;
+                    case 4:$(".state").html("订单已完成");
+                        $(".confirmReceipt").html("评价");
+                        break;
+                    case 5:$(".state").html("已完成");
+                        $(".confirmReceipt").html("已完成");
+                        break;
+                    case 6:$(".state").html("退款中");
+                        $(".confirmReceipt").html("退款中");
+                        break;
+                    case 7:$(".state").html("退款");
+                        $(".confirmReceipt").html("退款");
+                        break;
+                }
             }
        }
+
+//事件委托，交易操作
+        $("#myOrderTbody").on("click",".confirmReceipt",function () {
+            let state=$(this).attr("data_state"),
+                id=$(this).parent().parent().find("td:first").text();
+            // console.log(id);
+            $(".confirmReceipt").html("");
+            switch (state) {
+                case "1":$(".state").html("买家已付款");
+                    $.ajax({
+                        type:"post",
+                        url:"/user/state.do",
+                        data:"state="+state+"id="+id,
+                        success:(data)=> {
+                            console.log(data.message);
+                            // myOrderList = data.message;
+                        }
+                    });
+                    $(".confirmReceipt").html("待发货");
+                    break;
+                case 2:state="待发货";
+                    $(".confirmReceipt").html("再次购买");
+                    break;
+                case 3:state="待收货";
+                    $(".confirmReceipt").html("评价");
+                    break;
+                case 4:state="待评价";
+                    $(".confirmReceipt").html("评价");
+                    break;
+                case 5:state="已完成";
+                    $(".confirmReceipt").html("已完成");
+                    break;
+                case 6:state="退款中";
+                    $(".confirmReceipt").html("退款中");
+                    break;
+                case 7:state="退款";
+                    $(".confirmReceipt").html("退款");
+                    break;
+            }
+        });
+
+       //收藏
+        function getMyCollection(){
+            $.ajax({
+                type:"post",
+                url:"/user/collection.do",
+                success:(data)=>{
+                    // console.log(data.message);
+                    MyCollection = data.message;
+                    dispalyMyCollection();
+                }
+            });
+        }
+        function dispalyMyCollection(){
+            $("#collectionList").html("");
+            for(let i=0;i<MyCollection.length;i++){
+                // console.log(i);
+                $("#collectionList").append(`
+                     <li>
+                    <img src="../img/goods${MyCollection[i].route}" alt="">
+                    <p>${MyCollection[i].name} <span>￥${MyCollection[i].price}</span></p>
+                    <p>${MyCollection[i].resume}</p>
+                    <div class="gouMai">
+                        <p class="icon icon-gouwuche"></p>
+                        <p>直接购买</p>
+                    </div>
+                </li>
+                `)
+            }
+        }
+
+        //地址
+        function getMyAddress(){
+            $.ajax({
+                type:"post",
+                url:"/user/address.do",
+                success:(data)=>{
+                    // console.log(data.message);
+                    MyAddress = data.message;
+                    dispalyMyAddress();
+                }
+            });
+        }
+        function dispalyMyAddress(){
+            $("#myAddress").html("");
+            for(let i=0;i<MyAddress.length;i++){
+                // console.log(i);
+                $("#myAddress").append(`
+                   <tr>
+                    <td>${MyAddress[i].receiver_name}</td>
+                    <td>
+                        ${MyAddress[i].receiver_Province}${MyAddress[i].receiver_city}<br/>
+                        ${MyAddress[i].receiver_county}<br/>
+                    </td>
+                    <td>
+                        ${MyAddress[i].receiver_details}
+                    </td>
+                    <td>${MyAddress[i].receiver_phone}</td>
+                    <td>
+                        <a id="update">修改</a>
+                        |
+                        <a href="#">删除</a>
+                    </td>
+                    <td>
+                        <a>默认地址</a>
+                    </td>
+                </tr>
+
+                `)
+            }
+        }
+
+        //文章列表
+        function getMyArticle(){
+            $.ajax({
+                type:"post",
+                url:"/user/article.do",
+                success:(data)=>{
+                    // console.log(data.message);
+                    MyArticle = data.message;
+                    dispalyMyArticle();
+                }
+            });
+        }
+        function dispalyMyArticle(){
+            $("#myArticle").html("");
+            for(let i=0;i<MyArticle.length;i++){
+                // console.log(i);
+                $("#myArticle").append(`
+                   <div class="article">
+                <p>${MyArticle[i].Title}</p>
+                <div>
+                    <img src="../img${MyArticle[i].face_pic}" alt="">
+                    <p>
+                       ${MyArticle[i].text}
+                       <br/>
+                        <a href="/">查看详情</a>
+                    </p>
+                </div>
+            </div>
+                `)
+            }
+        }
+
+        //账号信息
+        function getMyCount(){
+            $.ajax({
+                type:"post",
+                url:"/user/count.do",
+                success:(data)=>{
+                    // console.log(data.message);
+                    count = data.message;
+                    dispalyMyCount();
+                }
+            });
+        }
+        function dispalyMyCount(){
+            $("#myAccount").html("");
+                // console.log(i);
+                $("#myAccount").append(`
+                      <tr>
+                    <th>当前头像：</th>
+                    <td>
+                        <img src="../img/${count[0].avatar}" alt="" id="user-photo">
+                        <button data-target="#changeModal" data-toggle="modal">更换头像</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>昵称：</th>
+                    <td>
+                        <input type="text" name="" id="" value="${count[0].nickname}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>性别：</th>
+                    <td>
+                        <input name="sex" type="radio" checked>男
+                        <input name="sex" type="radio">女
+                    </td>
+                </tr>
+                <tr>
+                    <th>真实姓名：</th>
+                    <td>
+                        <input type="text" name="" value="${count[0].realname}"><br/>
+                        <span class="txtName">*请输入中文</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>生日：</th>
+                    <td>
+                        <input type="date" name="" value="${count[0].birthday}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>密码：</th>
+                    <td>
+                        <a id="updatePwd">修改密码</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>手机号码：</th>
+                    <td>
+                        <input type="text" name="" value="${count[0].phone}"><br/>
+                        <span class="txtName">*请输入11位的数字</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>邮箱地址：</th>
+                    <td>
+                        <input type="text" name="" value="${count[0].email}"><br/>
+                        <span class="txtName">*请输入正确的邮箱格式</span>
+                    </td>
+                </tr>
+                `)
+        }
 </script>
 </html>

@@ -1,9 +1,9 @@
 const myEx = require("express");
 const router = myEx.Router();
-const unloginCon = require("../controller/headController");
+const headCon = require("../controller/headController");
 const allProductsModel = require("../model/allProductsModel");
 
-router.post("/search.do",unloginCon.search);
+router.post("/search.do",headCon.search);
 router.get("/login.html",(req,res)=>{
     res.redirect("/page/login.html");
 });
@@ -11,7 +11,7 @@ router.get("/register.html",(req,res)=>{
     res.redirect("/page/registe.html");
 });
 router.get("/index.html",(req,res)=>{
-    res.render("index");
+    res.redirect("/index.html");
 });
 router.get("/allProducts.html",(req,res)=>{
     allProductsModel.banner((err,banner)=>{
@@ -47,19 +47,19 @@ router.get("/allProducts.html",(req,res)=>{
     });
 });
 router.get("/giftGiving.html",(req,res)=>{
-    res.render("giftGiving");
+     res.redirect("/giftGiving.html");
 });
 router.get("/tasteDetective.html",(req,res)=>{
-    res.render("tasteDetective");
+     res.redirect("/tasteDetective.html");
 });
 router.get("/aboutUs.html",(req,res)=>{
-    res.render("aboutUs");
+     res.redirect("/aboutUs.html");
 });
 router.get("/userCenter.html",(req,res)=>{
-    res.render("userCenter");
+     res.redirect("/userCenter.html");
 });
 router.get("/help.html",(req,res)=>{
-    res.render("help");
+     res.redirect("/help.html");
 });
 
 module.exports = router;

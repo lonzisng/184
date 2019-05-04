@@ -33,7 +33,7 @@ $(function () {
             $.trim(verify);
 
 
-        })
+        });
 
     //这里是对账号正则判断
     function panduan(account,pwd){
@@ -92,7 +92,7 @@ $(function () {
             return 0;
         }
         return 1;
-    }
+    };
 
     //点击input框的时候隐藏提示信息
     $("#account").click(function () {

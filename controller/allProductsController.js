@@ -55,5 +55,20 @@ module.exports = {
                 res.send({code:700,msg:"数据库错误"});
             }
         });
+    },
+    splbGoods(req,res){
+        let id = req.body.id;
+        console.log(id);
+        allProductsModel.splbGoods(id,(err,data)=>{
+            if(!err){
+                if(data.length>0){
+                    res.send({code:200,msg:"ok",data});
+                }else{
+                    res.send({code:600,msg:"数据读取错误"});
+                }
+            }else{
+                res.send({code:700,msg:"数据库错误"});
+            }
+        })
     }
 }

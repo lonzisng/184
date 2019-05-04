@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全部商品</title>
+    <link rel="stylesheet" type="text/css" href="../css/allProducts-base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/allProducts-uncover.css" />
+    <link rel="stylesheet" href="../css/allProducts.css">
+    <script>
+		document.documentElement.className = "js";
+		var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+</head>
+<!--全部商品-->
+<body>
+    <section id="navigation" class="navigation">
+        <nav>
+            <p>全品类商品</p>
+            <ul>
+                <li><h4>网红小吃</h4>
+                    <ul>
+                        <li>牛奶面</li>
+                        <li>咸蛋黄肉松青团</li>
+                        <li>爆浆蛋糕</li>
+                        <li>死神辣条</li>
+                        <li>更多>></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>特色生鲜</h4>
+                    <ul>
+                        <li>qweqwe</li>
+                        <li>qwe</li>
+                        <li>qerw</li>
+                        <li>xfsdxf</li>
+                        <li>sdfsdf</li>
+                        <li>qerw</li>
+                        <li>xfsdxf</li>
+                        <li>sdfsdf</li>
+                        <li>qerw</li>
+                        <li>xfsdxf</li>
+                        <li>更多>></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>烟熏制品</h4>
+                    <ul>
+                        <li>qweqwe</li>
+                        <li>qwe</li>
+                        <li>qerw</li>
+                        <li>xfsdxf</li>
+                        <li>sdfsdf</li>
+                        <li>sdfsdf</li>
+                        <li>qerw</li>
+                        <li>xfsdxf</li>
+                        <li>sdfsdf</li>
+                        <li>qerw</li>
+                        <li>xfsdxf</li>
+                        <li>更多>></li>
+                    </ul>
+                </li>
+                <li></li>
+            </ul>
+        </nav>
+        <main>
+			<div class="content content--fixed">
+				<a class="github" href="https://github.com/codrops/SliceRevealer" title="Find this project on GitHub">
+					<svg class="icon icon--github">
+						<use xlink:href="#icon-github"></use>
+					</svg>
+				</a>
+				<nav class="pagination">
+					<span class="pagination__item"></span>
+					<span class="pagination__item"></span>
+					<span class="pagination__item"></span>
+					<span class="pagination__item"></span>
+					<span class="pagination__item"></span>
+				</nav>
+			</div>
+			<div class="slides">
+				<div class="slide slide--current">
+                    <div class="slide__img" style="background-image: url('../img/00033.jpg');"></div>
+                    <a href="../img/banner1.jpg"></a>
+				</div>
+				<div class="slide">
+					<div class="slide__img" style="background-image: url('../img/00034.jpg');"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__img" style="background-image: url('../img/banner1.jpg');"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__img" style="background-image: url('../img/banner2.jpg');"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__img" style="background-image: url('../img/banner3.jpg');"></div>
+				</div>
+			</div>
+        </main>
+    </section>
+    <section class="orderBar">
+        <ul>
+            <li><a href="">综合</a></li>
+            <li><a href="">新品</a></li>
+            <li><a href="">销量</a></li>
+            <li><a href="">价格</a><a class="icon icon-052caozuo_jiangxu"></a><a class="icon icon-053caozuo_shengxu"></a></li>
+            <li><input type="text" id="lowerPrice"/> - <input type="text" id="upperPrice"/></li>
+        </ul>
+    </section>
+    <section class="products">
+        <div class="goods">
+            <img src="../img/00033.jpg" alt="" />
+            <h4>金华黄桃酒</h4>
+            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
+        </div>
+        <div class="goods">
+            <img src="../img/00033.jpg" alt="" />
+            <h4>金华黄桃酒</h4>
+            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
+        </div>
+        <div class="goods">
+            <img src="../img/00033.jpg" alt="" />
+            <h4>金华黄桃酒</h4>
+            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
+        </div>
+        <div class="goods">
+            <img src="../img/00033.jpg" alt="" />
+            <h4>金华黄桃酒</h4>
+            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
+        </div>
+        <div class="goods">
+            <img src="../img/00033.jpg" alt="" />
+            <h4>金华黄桃酒</h4>
+            <p>￥ 198<span class="icon icon-gouwuche" id="111"></span></p>
+        </div>
+    </section>
+
+    <script src="../js/allProducts-imagesloaded.pkgd.min.js"></script>
+    <script src="../js/allProducts-anime.min.js"></script>
+    <script src="../js/allProducts-uncover.js"></script>
+    <script src="../js/allProducts.js"></script>
+</body>
+</html>

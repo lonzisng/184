@@ -19,13 +19,13 @@ $(function(){
         if (t < 0) {
             t = 0
         }
-        if (t > $(this).height() - $(".float_layer").height()) {
-            t = $(this).height() - $(".float_layer").height()
+        if (t > $(this).height() - $(".float_layer").height()+20) {
+            t = $(this).height() - $(".float_layer").height()+20
         }
 
         $(".float_layer").css({
             "left": l,
-            "top": t
+            "top": t-20
         })
         var pX = l / ($(".mask").width() - $(".float_layer").width())
         var pY = t / ($(".mask").height() - $(".float_layer").height())

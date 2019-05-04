@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<!--注册-->
+<body>
+<!--导航栏-->
+<header></header>
+<!--内容-->
+<section>
+    <div>
+        <div id="Register">
+            <h2>免费注册</h2>
+            <p></p>
+            <form action="/register.do" method="post" id="formRegister">
+                <div>
+                    <select>
+                        <option>中国大陆 +86</option>
+                    </select>
+                    <input type="text" id="mobilePhone" name="mobilePhone" placeholder="请输入手机号">
+                    <span class="helpBlock1" style="display: none"></span>
+                </div>
+                <div>
+                    <input type="text" id="verify" name="verify" placeholder="请输入信息验证">
+                    <p id="verifyAdd">获取验证码</p>
+                    <span class="helpBlock2" style="display: none"></span>
+                </div>
+                <div>
+                    <input type="password" id="pwd" name="pwd" placeholder="请设置密码">
+                    <span class="helpBlock3" style="display: none"></span>
+                </div>
+                <div>
+                    <input type="password" id="pwdd" name="pwdd" placeholder="请重复密码">
+                    <span class="helpBlock4" style="display: none"></span>
+                </div>
+                <div>
+                    <input type="checkbox" checked="checked">我以阅读并同意&lsaquo;&lsaquo;小食记用户协议&rsaquo;&rsaquo;
+                </div>
+                <div>
+                    <p id="registerAdd">同意协议并注册</p>
+                </div>
+                <div>
+                    <p><span>已经是小食记会员？</span><a href="login.html">立即登录</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!--底部导航-->
+<footer></footer>
+<script src="../plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="../js/ajaxFn.js"></script>
+<script src="../js/register.js"></script>
+</body>
+</html>

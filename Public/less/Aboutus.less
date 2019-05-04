@@ -1,0 +1,141 @@
+@import "./public.less";
+*{
+  padding: 0;
+  margin: 0;
+}
+p{
+  color: #000000;
+  font-size:@smFont ;
+}
+.clear{
+  clear: both;
+}
+header{
+  width: auto;
+  height: 300px;
+  &>.title{
+    width: 150px;
+    height: 30px;
+    margin: 100px auto 0;
+    background-color:@dotColor;
+    &>h3{
+      text-align: center;
+      padding: 2px;
+      color: white;
+      font: @font;
+      font-size: @mdFont;
+    }
+  }
+  &>.sm_title{
+    width: 150px;
+    height: 20px;
+    margin: 50px auto;
+    &>p{
+      text-align: center;
+      font-size: @smFont;
+      font: @font;
+      color: #AAAAAA;
+    }
+  }
+  &>.brief{
+    width: 300px;
+    margin: 0 auto;
+    &>p{
+      text-align: center;
+      color: rgba(0,0,0,.6);
+    }
+
+  }
+}
+section{
+  &>.img{
+    position: relative;
+    &>img:nth-of-type(1){
+
+    }
+    &>img:nth-of-type(2){
+      position: absolute;
+      right: 300px;
+      top: 100px;
+    }
+  }
+  &>.title{
+    width: 150px;
+    height: 30px;
+    margin: 100px auto 0;
+    background-color:@dotColor;
+    &>h3{
+      text-align: center;
+      padding: 2px;
+      color: white;
+      font: @font;
+      font-size: @mdFont;
+    }
+  }
+  &>div>ul{
+    width: 800px;
+    margin: 100px auto;
+    &>li{
+      float: left;
+      &:nth-of-type(1){
+        position: relative;
+        right: 50px;
+      }
+      &:nth-of-type(2){
+        position: relative;
+        left: 50px;
+        top:100px;
+        &>h5{
+          font-size:@mdFont ;
+          padding-bottom: 50px;
+        }
+
+      }
+    }
+  }
+  &>p{
+    width: 1100px;
+    margin: 100px auto;
+    line-height:28px;
+  }
+}
+footer{
+  &>.title{
+    width: 150px;
+    height: 30px;
+    margin: 100px auto 0;
+    background-color:@dotColor;
+    &>h3{
+      text-align: center;
+      padding: 2px;
+      color: white;
+      font: @font;
+      font-size: @mdFont;
+    }
+  }
+  &>div>ul{
+    width: 900px;
+    //border: 1px solid #000000;
+    height: 500px;
+    margin: 100px auto;
+      &>:nth-of-type(1){
+        //position: relative;
+        //right: 50px;
+      }
+      &>:nth-of-type(2){
+        position: relative;
+        left: 150px;
+        &>img{
+          width: 350px;
+          height: 400px;
+        }
+      }
+    &>li>div>ul{
+      height: 24px;
+      line-height: 24px;
+      &>li{
+        padding-left: 5px;
+      }
+    }
+    }
+  }

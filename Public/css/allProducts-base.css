@@ -270,10 +270,8 @@ a.demo--current {
 }
 
 .pagination {
-	/* align-self: end;
-	justify-self: end; */
 	position: absolute;
-	right: 0;
+	right: 30px;
 	top: 150px;
 	flex-direction:column;
 	grid-area: pagination;

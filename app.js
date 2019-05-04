@@ -14,7 +14,8 @@ const loginRouter = require("./route/loginRouter");
 const userRouter = require("./route/userRouter");
 const indexRoute =require("./route/indexRoute");
 const goodsDetailRouter = require("./route/goodsDetailRouter");
-
+const aboutRouter = require("./route/aboutRouter");//关于我们
+const helpRouter = require("./route/helpRouter");//帮助中心
 
 // 服务配置
 app.use(logger("dev"));
@@ -41,12 +42,17 @@ app.use(loginRouter);
 app.use("/allProducts",allProductsRouter);
 app.use(goodsDetailRouter);
 app.get("/userCenter.html",(req,res)=>{
-    res.render("userCenter");
+    let obj=req.session.userName,
+        username = obj[0].nickname,
+        Tou = obj[0].avatar;
+    res.render("userCenter",{userName:username,Tou:Tou});
 });
-
 //个人中心路由
 app.use("/user",userRouter);
+app.use("/aboutUs.html", aboutRouter);//关于界面路由
+app.use("/help.html",helpRouter);//帮助界面路由
 app.use(myEx.static(__dirname + "/public"));
+
 // 服务监听
 app.listen(8080, () => {
     console.log("server is runing");

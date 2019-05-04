@@ -265,9 +265,8 @@ button {
 .icon-favoriteslist:before {
   content: "\e69c";
 }
-* {
-  padding: 0;
-  margin: 0;
+.lan {
+  background-color: #96cae1;
 }
 #Shop {
   width: 80%;
@@ -299,7 +298,13 @@ button {
   position: relative;
 }
 #Shop table tbody > tr > td {
-  height: 50px;
+  padding: 10px 0px;
+  overflow: hidden;
+  position: relative;
+}
+#Shop table tbody > tr > td img {
+  width: 100px;
+  height: 100px;
 }
 #Shop table tbody > tr > td:nth-of-type(1) {
   text-align: left;
@@ -315,6 +320,41 @@ button {
   text-align: left;
   width: 48%;
 }
+#Shop table tbody > tr > td:nth-of-type(2) span {
+  position: absolute;
+  top: 38%;
+  left: 120px;
+}
+#Shop table tbody > tr > td:nth-of-type(4) > div {
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  background-color: #F0F0F0;
+}
+#Shop table tbody > tr > td:nth-of-type(4) p {
+  width: 20px;
+  float: left;
+  border: 1px #C9C9C9 solid;
+}
+#Shop table tbody > tr > td:nth-of-type(4) p:nth-of-type(2) {
+  width: 34px;
+  background-color: white;
+}
+#Shop table tbody > tr > td:nth-of-type(4) p:first-child {
+  cursor: pointer;
+  border-radius: 5px 0px 0px 5px;
+}
+#Shop table tbody > tr > td:nth-of-type(4) p:last-child {
+  border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
+}
 #Shop table thead > tr > th:nth-of-type(1) {
   text-align: left;
   width: 7%;
@@ -322,6 +362,16 @@ button {
 #Shop table thead > tr > th:nth-of-type(2) {
   text-align: left;
   width: 48%;
+}
+#Shop table tbody > tr > td:nth-of-type(6) > p {
+  cursor: pointer;
+}
+#Shop table tbody > tr > td:nth-of-type(6) > p:first-child {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#Shop table tbody > tr > td:nth-of-type(6) > p:hover {
+  color: #E83518;
 }
 .function {
   width: 100%;

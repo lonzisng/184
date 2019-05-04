@@ -183,13 +183,12 @@ $(function(){
             data:null,
             cache:false,
             processData: false,
-            contentType: false,
             success:(data)=>{
                 if(data.code===200){
                     let html="";
                     for(let i=0;i< data.data.length;i++){
                         html += `<div class="goods" data-id="${data.data[i].id}">
-                                    <img src="../img/goods${data.data[i].src}" alt="" />
+                                    <div><a href="/goodsDetail.do?g=${data.data[i].id}"><img src="../img/goods${data.data[i].src}" alt="" /></a></div>
                                     <h4>${data.data[i].name}</h4>
                                     <p>￥ ${data.data[i].price}<span class="icon icon-gouwuche shopcard"></span></p>
                                 </div>`;
@@ -224,13 +223,12 @@ $(function(){
             data:parameter+"",
             cache:false,
             processData: false,
-            contentType: false,
             success:(data)=>{
                 if(data.code===200){
                     let html="";
                     for(let i=0;i< data.data.length;i++){
                         html += `<div class="goods" data-id="${data.data[i].id}">
-                                    <img src="../img/goods${data.data[i].src}" alt="" />
+                                    <div><a href="/goodsDetail.do?g=${data.data[i].id}"><img src="../img/goods${data.data[i].src}" alt="" /></a></div>
                                     <h4>${data.data[i].name}</h4>
                                     <p>￥ ${data.data[i].price}<span class="icon icon-gouwuche shopcard"></span></p>
                                 </div>`;
@@ -242,4 +240,58 @@ $(function(){
             }
         })
     }
+    if(window.sessionStorage){
+        let search = sessionStorage.getItem("search");
+        if(search){
+            console.log(search);
+            $.ajax({
+                url:"/head/search.do",
+                type:"post",
+                data:search,
+                cache:false,
+                processData: false,
+                success:(data)=>{
+                    $("#products").html("");
+                    let html="";
+                    for(let i=0;i<data.length;i++){
+                        html+=`<div class="goods" data-id="${data[i].id}">
+                            <div><a href="/goodsDetail.do?g=${data[i].id}"><img src="../img/goods/${data[i].src}" alt="" /></a></div>
+                            <h4><a href="/goodsDetail?g=${data[i].id}">${data[i].NAME}</a></h4>
+                            <p>￥ ${data[i].price}<span class="icon icon-gouwuche shopcard"></span></p>
+                        </div>`
+                    }
+                    $("#products").html(html);
+                }
+            })
+            sessionStorage.removeItem("search");
+        }
+    }
+
+    $("#splbList").on("click","li",function(){
+        let id=$(this).attr("data-id");
+        console.log(id);
+        $.ajax({
+            url:"/allProducts/splbGoods.do",
+            type:"post",
+            data:"id="+id,
+            cache:false,
+            processData: false,
+            success:(data)=>{
+                if(data.code===200){
+                    console.log(data);
+                    let html="";
+                    for(let i=0;i< data.data.length;i++){
+                        html += `<div class="goods" data-id="${data.data[i].id}">
+                                    <div><a href="/goodsDetail.do?g=${data.data[i].id}"><img src="../img/goods${data.data[i].src}" alt="" /></a></div>
+                                    <h4>${data.data[i].name}</h4>
+                                    <p>￥ ${data.data[i].price}<span class="icon icon-gouwuche shopcard"></span></p>
+                                </div>`;
+                    }
+                    products.html(html);
+                }else{
+                    console.log(data.message);
+                }
+            }
+        })
+    })
 })

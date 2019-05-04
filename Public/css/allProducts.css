@@ -364,6 +364,7 @@ button {
   box-shadow: 0px 0px 10px rgba(153, 153, 153, 0.5);
   margin-top: 32px;
   cursor: pointer;
+  color: #424242;
 }
 .products .goods h4 {
   font-weight: 700;
@@ -380,9 +381,27 @@ button {
   display: inline;
   float: right;
   color: #cfa972;
-  font-size: 20px;
+  font-size: 24px;
 }
-.products .goods img {
+.products .goods div {
   width: 260px;
   height: 300px;
+  overflow: hidden;
+}
+.products .goods div img {
+  width: 260px;
+  height: 300px;
+  transition: all .5s linear;
+}
+.products .goods:hover {
+  box-shadow: 0px 0px 10px #cfa972;
+}
+.products .goods:hover div > img {
+  transform: scale(1.1);
+}
+.products .goods:hover h4 {
+  color: #cfa972;
+}
+.products .goods:hover p {
+  font-size: 16px;
 }

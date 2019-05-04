@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title> 
+    <link rel="stylesheet" href="/css/public.css">
+    <link rel="stylesheet" href="/css/Aboutus.css">
+    <script src="/js/less.min.js"></script>
+    <!--<link rel="stylesheet" href="../public/less/Aboutus.less" type="text/less">-->
+    <!--<script src="../public/js/less.min.js"></script>-->
+</head>
+<body>
+<%-include('head.html')%>
+<header>
+    <div class="title">
+        <h3>品牌介绍</h3>
+    </div>
+    <div class="sm_title">
+        <% for(let i=0;i< data.length;i++){%>
+        <p><a>小食记</a>&nbsp;|&nbsp;<a>XSJ</a></p></div>
+        <%}%>
+
+
+    <div class="brief "><p>让lanvin的世界让你大吃一惊。<br>
+        了解最新的收藏，广告活动和公司新闻</p></div>
+</header>
+<section>
+    <div class="img" id="img">
+        <% for(let i=0;i< data.length;i++){%>
+        <img  src="<%=data[i].banner%>"/>
+        <img src="<%=data.banner%>" />
+
+        <%}%>
+
+       </div>
+    <div>
+        <ul>
+            <li>
+                <img src="../img/about3.png" />
+            </li>
+            <li>
+                <h5>美食第一人——汪威威</h5>
+                <p>专注于网站特色100年，阅目90000000+页面<br>
+                    是一位优秀的美食专家。</p>
+            </li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="title">
+        <h3>品牌故事</h3>
+    </div>
+    <p>在一段不算长的时间内，电商网站走过了综合电商，进入了垂直电商的时代，时装、生鲜、数码等垂直领域的电商网站入雨后春笋一般生长出来，但在各地区的特色产品，尤其是特色食品方面，几乎还没有电商涉足。
+        <br>
+        <br>
+        特色食品一直有着广阔的市场，特色小吃、瓜果、肉制品等，是上班、生活吃零食的良好选择，同时平时送礼，选择精致的特色食品更是传递感情需求的良品。我们提供全国各地的特色食品直购、推荐，街头巷尾小吃搜罗，精品礼盒特产定制，面向馋嘴族和有各种送礼需求的人群，接受度非常大。
+        <br>
+        <br>
+        产品优势与网站特色 <br>
+        •     提供特色美食侦探发现全国特色美食、美食爆款推荐，提供各地区、各城、各县、不同口味的特色美食产品，满足喜欢特色的吃货群体。
+        <br>•     提供精美的、有品质保证的特产礼品，解决大多数人送礼不知道送什么的尴尬。
+        <br>•     质量、服务保证，如可退预售款，可开发票等 。
+        <br>•     网站在风格与布局上，比同行更时尚、简介、清晰、明了、流畅，有更良好的用户体验。 </p>
+    <!--<div class="clear"></div>-->
+
+</section>
+<footer>
+    <div class="title">
+        <h3>联系我们</h3>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <div>
+                    <ul>
+                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li><p>合作：</p></li>
+                        <li><p>1561151@qq.com</p></li>
+                    </ul>
+                </div>
+                <br>
+                <div>
+                    <ul>
+                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li> <p>供应：</p></li>
+                        <li><p>1561151@qq.com</p></li>
+                    </ul>
+
+
+                </div>
+                <br>
+                <div>
+                    <ul>
+                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li> <p>代理：</p></li>
+                        <li><p>116516151@qq.com</p></li>
+                    </ul>
+
+
+                </div>
+                <br>
+                <div>
+                    <ul>
+                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li> <p>投诉建议：</p></li>
+                        <li><p>15611sas51@qq.com</p></li>
+                    </ul>
+
+
+                </div>
+                <br>
+                <div>
+                    <ul>
+                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li> <p>联系电话：</p></li>
+                        <li><p>159326155151</p></li>
+                    </ul>
+
+
+                </div>
+                <br>
+                <div>
+                    <ul>
+                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li> <p>公司地址：</p></li>
+                        <li><p>四川省成都市武侯区天府三街云华路333号</p></li>
+                    </ul>
+
+
+                </div>
+            </li>
+            <li>
+                <img src="../img/about4.png" /></li>
+        </ul>
+    </div>
+
+</footer>
+<%-include('footer.html')%>
+</body>
+<script src="/js/Aboutus.js"></script>
+<script src="./js/head.js"></script>
+</html>

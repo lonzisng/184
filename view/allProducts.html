@@ -23,31 +23,27 @@
             <ul>
                 <li><h4>网红小吃</h4>
                     <ul>
-                        <li>牛奶面</li>
-                        <li>咸蛋黄肉松青团</li>
-                        <li>爆浆蛋糕</li>
-                        <li>死神辣条</li>
-                        <li>更多>></li>
+                    <% for (let i=0;i < goods.length;i++) { if(goods[i].food==1){%>
+                        <li><a href="/goodsDetail?g=<%=goods[i].id%>"><%=goods[i].name%></a></li>
+                    <% }} %>
                     </ul>
                 </li>
                 <li>
                     <h4>特色礼品</h4>
-                    <ul>
-                        <li>姜茶</li>
-                        <li>小罐茶</li>
-                        <li>吉林党参</li>
-                        <li>金装蔓越莓</li>
+                    <ul id="giftList">
+                        <% for (let i=0;i < goods.length;i++) { if(goods[i].gift==1){%>
+                            <li><a href="/goodsDetail.do?g=<%=goods[i].id%>"><%=goods[i].name%></a></li>
+                        <% }} %>
                     </ul>
                 </li>
                 <li>
-                    <h4>其他分类</h4>
-                    <ul>
+                    <h4>分类</h4>
+                    <ul id="splbList">
                         <% for (let i=0;i < splb.length;i++) {%>
                             <li data-id="<%=splb[i].id%>"><%=splb[i].name%></li>
                         <%}%>
                     </ul> 
                 </li>
-                <li></li>
             </ul>
         </nav>
         <main>
@@ -84,7 +80,9 @@
     <section id="products" class="products">
         <% for (let i=0;i < goods.length;i++) {%>
             <div class="goods" data-id="<%=goods[i].id%>">
-                <a href="/goodsDetail.do?g=<%=goods[i].id%>"><img src="../img/goods/<%=goods[i].src%>" alt="" /></a>
+                <div>
+                     <a href="/goodsDetail.do?g=<%=goods[i].id%>"><img src="../img/goods/<%=goods[i].src%>" alt="" /></a>
+                </div>
                 <h4><a href="/goodsDetail?g=<%=goods[i].id%>"><%=goods[i].name%></a></h4>
                 <p>￥ <%=goods[i].price%><span class="icon icon-gouwuche shopcard"></span></p>
             </div>

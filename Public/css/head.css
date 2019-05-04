@@ -414,10 +414,39 @@ header.min nav#headerNav h1 img {
   padding: 6px 0;
   height: 40px;
 }
-header.min nav#headerNav ul > li {
+header.min nav#headerNav ul li {
   height: 50px;
   padding: 0 16px;
 }
 header.min nav#headerNav ul:last-of-type li:first-child {
   padding: 12px 0;
+}
+aside {
+  position: fixed;
+  bottom: 20px;
+  right: -webkit-calc((100% - 1200px) / 2 - 50px);
+  z-index: 99999;
+}
+aside li {
+  float: none;
+  width: 25px;
+  height: 25px;
+  background-color: #cfa972;
+  border: 1px solid #cfa972;
+  margin-bottom: 10px;
+}
+aside li a.icon {
+  display: inline-block;
+  width: 25px;
+  line-height: 25px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}
+aside li:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #cfa972;
+}
+aside li:hover a.icon {
+  color: #cfa972;
 }

@@ -294,10 +294,14 @@ ul > li {
   text-align: center;
 }
 input {
-  outline: black;
-  border: 1px solid #d7d7d7;
+  outline: black !important;
+  border: 1px solid #d7d7d7 !important;
   width: 165px;
   height: 25px;
+}
+.input {
+  width: 15px;
+  height: 15px;
 }
 button {
   width: 75px;
@@ -307,6 +311,9 @@ button {
   line-height: 25px;
   margin: 32px;
 }
+.colorLi {
+  color: #cfa972;
+}
 section {
   width: 1200px;
   min-width: 1000px;
@@ -314,6 +321,7 @@ section {
   margin: 0  auto;
 }
 section > div {
+  margin-top: 32px;
   float: left;
   margin-left: 3%;
 }
@@ -418,6 +426,9 @@ section > .right > p {
 .myOrder img {
   width: 110px;
   height: 90px;
+}
+.myOrder p {
+  font-size: 12px;
 }
 .myCollection {
   width: 100%;
@@ -736,7 +747,11 @@ section > .right > p {
 }
 .myAccount tr img {
   width: 130px;
-  height: 120px;
+  height: 130px;
+}
+.myAccount tr span {
+  opacity: 0;
+  color: red;
 }
 .myAccount tr:nth-of-type(3) input {
   width: 15px;
@@ -764,6 +779,33 @@ section > .right > p {
 }
 .updatePwd table tr:nth-last-child(1) td {
   border-top: 1px solid #d7d7d7;
+}
+#photo {
+  max-width: 100%;
+  max-height: 350px;
+}
+.img-preview-box {
+  text-align: center;
+}
+.img-preview-box > div {
+  display: inline-block;
+  margin-right: 10px;
+}
+.img-preview {
+  overflow: hidden;
+}
+.img-preview-box .img-preview-lg {
+  width: 150px;
+  height: 150px;
+}
+.img-preview-box .img-preview-md {
+  width: 100px;
+  height: 100px;
+}
+.img-preview-box .img-preview-sm {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 .divPage {
   margin-top: 32px;

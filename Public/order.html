@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/order.css">
+</head>
+<!--确认订单-->
+<body>
+<!--导航栏-->
+<header></header>
+<!--内容-->
+<section>
+    <div>
+        <div id="order">
+            <div>
+                <h3>选择收货地址:</h3>
+                <div id="addres" class="height">
+                </div>
+                <div>
+                    <p id="displayAddress">显示全部地址</p>
+                    <a href="myaddress.html">管理收件地址</a>
+                </div>
+                <div><h3>确认商品</h3></div>
+                <!--读取商品区域-->
+                <table align="left">
+                    <thead>
+                    <tr>
+                        <th>商品名称</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th style="color: #ff4400">小计</th>
+                    </tr>
+                    </thead>
+                    <tbody id="displayGoods"></tbody>
+                </table>
+            </div>
+            <div class="function">
+                <p><span>实付款:</span><span id="zongjia"></span></p>
+                <a href="shopCart.html"><span></span><span>返回购物车</span></a>
+                <p id="placeOrder">提交订单</p>
+            </div>
+        </div>
+        <!--//支付弹框-->
+        <div id="payment">
+           <div>
+               <ul id="Merchandise" class="H">
+               </ul>
+               <div>
+                   <div>
+                       <p><input type="checkbox" checked="checked"></p>
+                       <p></p>
+                       <p>中国工商银行</p>
+                       <p>**2222</p>
+                       <p>储蓄卡 | 快捷</p>
+                       <p style="color: #FF9966">推荐</p>
+                   </div>
+                   <div>
+                       <p><input type="checkbox"></p>
+                       <p></p>
+                       <p>中国建设银行</p>
+                       <p>**3333</p>
+                       <p>储蓄卡 | 快捷</p>
+                       <p style="color: #FF9966">推荐</p>
+                   </div>
+               </div>
+               <div><p>其他付款方式</p><p>新增网银支付</p></div>
+               <div>
+                   <p>支付密码:</p>
+                   <div id="payWsd">
+                       <form action="/Paywsd.do" method="post" id="formPayWsd">
+                           <input name="P1" type="text" maxlength="1">
+                           <input name="P2" type="text" maxlength="1">
+                           <input name="P3" type="text" maxlength="1">
+                           <input name="P4" type="text" maxlength="1">
+                           <input name="P5" type="text" maxlength="1">
+                           <input name="P6" type="text" maxlength="1">
+                       </form>
+                       <a href="#">忘记密码</a>
+                   </div>
+               </div>
+               <div id="paymentButton"><a href="#">确认支付</a></div>
+           </div>
+        </div>
+        <!--支付跳转弹框-->
+        <div id="paymentt">
+            <p>支付成功</p>
+            <p>页面正在跳转......</p>
+        </div>
+    </div>
+</section>
+<!--底部导航-->
+<footer></footer>
+<script src="../plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="../js/ajaxFn.js"></script>
+<script src="../js/order.js"></script>
+</body>
+</html>
