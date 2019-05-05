@@ -23,15 +23,16 @@
             <ul>
                 <li><h4>网红小吃</h4>
                     <ul>
-                    <% for (let i=0;i < goods.length;i++) { if(goods[i].food==1){%>
-                        <li><a href="/goodsDetail?g=<%=goods[i].id%>"><%=goods[i].name%></a></li>
+                    <% let foods=0,gifts=0%>
+                    <% for (let i=0;i < goods.length;i++) { if(goods[i].food==1&&foods< 5){ foods++;%>
+                        <li><a href="/goodsDetail.do?g=<%=goods[i].id%>"><%=goods[i].name%></a></li>
                     <% }} %>
                     </ul>
                 </li>
                 <li>
                     <h4>特色礼品</h4>
                     <ul id="giftList">
-                        <% for (let i=0;i < goods.length;i++) { if(goods[i].gift==1){%>
+                        <% for (let i=0;i < goods.length;i++) { if(goods[i].gift==1&&gifts< 7){ gifts++;%>
                             <li><a href="/goodsDetail.do?g=<%=goods[i].id%>"><%=goods[i].name%></a></li>
                         <% }} %>
                     </ul>

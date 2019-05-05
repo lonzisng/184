@@ -284,6 +284,7 @@ section {
 .option .pic {
   width: 460px;
   margin-right: 20px;
+  position: relative;
   float: left;
 }
 .option .pic .small_box {
@@ -313,8 +314,8 @@ section {
 }
 .option .pic .big_box {
   position: absolute;
-  left: 550px;
-  top: 40px;
+  left: 480px;
+  top: 0;
   width: 400px;
   height: 390px;
   overflow: hidden;

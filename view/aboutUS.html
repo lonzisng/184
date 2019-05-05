@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title> 
-    <link rel="stylesheet" href="/css/public.css">
-    <link rel="stylesheet" href="/css/Aboutus.css">
-    <script src="/js/less.min.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/Aboutus.css">
+    <script src="./js/less.min.js"></script>
     <!--<link rel="stylesheet" href="../public/less/Aboutus.less" type="text/less">-->
     <!--<script src="../public/js/less.min.js"></script>-->
 </head>
 <body>
 <%-include('head.html')%>
-<header>
+<div class="header">
     <div class="title">
         <h3>品牌介绍</h3>
     </div>
     <div class="sm_title">
-        <% for(let i=0;i< data.length;i++){%>
         <p><a>小食记</a>&nbsp;|&nbsp;<a>XSJ</a></p></div>
-        <%}%>
-
-
     <div class="brief "><p>让lanvin的世界让你大吃一惊。<br>
         了解最新的收藏，广告活动和公司新闻</p></div>
-</header>
-<section>
+</div>
+<div class="section">
     <div class="img" id="img">
         <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].sort==2){%>
         <img  src="<%=data[i].banner%>"/>
-        <img src="<%=data.banner%>" />
-
         <%}%>
-
+        <%}%>
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].sort==1){%>
+        <img src="<%=data[i].banner%>" style="width: 150px;height: 120px;"/>
+        <%}%>
+        <%}%>
        </div>
+    <div class="clear"></div>
     <div>
         <ul>
             <li>
-                <img src="../img/about3.png" />
+                <% for(let i=0;i< data.length;i++){%>
+                <% if(data[i].sort==5){%>
+                <img  src="<%=data[i].banner%>"/>
+                <%}%>
+                <%}%>
             </li>
             <li>
-                <h5>美食第一人——汪威威</h5>
-                <p>专注于网站特色100年，阅目90000000+页面<br>
-                    是一位优秀的美食专家。</p>
+                <h5>WEB网站——贾斯汀·比波</h5>
+                <p>专注于网站开发10年经验，有着很先进的技术在<br>
+                    工作中兢兢业业勤勤恳恳</p>
             </li>
         </ul>
     </div>
@@ -62,8 +67,8 @@
         <br>•     网站在风格与布局上，比同行更时尚、简介、清晰、明了、流畅，有更良好的用户体验。 </p>
     <!--<div class="clear"></div>-->
 
-</section>
-<footer>
+</div>
+<div class="footer">
     <div class="title">
         <h3>联系我们</h3>
     </div>
@@ -72,17 +77,31 @@
             <li>
                 <div>
                     <ul>
-                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+
+                        <li>
+                            <% for(let i=0;i< data.length;i++){%>
+                            <% if(data[i].sort==7){%>
+                            <img  src="<%=data[i].banner%>"/>
+                            <%}%>
+                            <%}%>
+
+                        </li>
                         <li><p>合作：</p></li>
-                        <li><p>1561151@qq.com</p></li>
+                        <li><p>473861658@qq.com</p></li>
                     </ul>
                 </div>
                 <br>
                 <div>
                     <ul>
-                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li>
+                            <% for(let i=0;i< data.length;i++){%>
+                            <% if(data[i].sort==7){%>
+                            <img  src="<%=data[i].banner%>"/>
+                            <%}%>
+                            <%}%>
+                        </li>
                         <li> <p>供应：</p></li>
-                        <li><p>1561151@qq.com</p></li>
+                        <li><p>473861658@qq.com</p></li>
                     </ul>
 
 
@@ -90,9 +109,15 @@
                 <br>
                 <div>
                     <ul>
-                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li>
+                            <% for(let i=0;i< data.length;i++){%>
+                            <% if(data[i].sort==7){%>
+                            <img  src="<%=data[i].banner%>"/>
+                            <%}%>
+                            <%}%>
+                        </li>
                         <li> <p>代理：</p></li>
-                        <li><p>116516151@qq.com</p></li>
+                        <li><p>473861658@qq.com</p></li>
                     </ul>
 
 
@@ -100,9 +125,15 @@
                 <br>
                 <div>
                     <ul>
-                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li>
+                            <% for(let i=0;i< data.length;i++){%>
+                            <% if(data[i].sort==7){%>
+                            <img  src="<%=data[i].banner%>"/>
+                            <%}%>
+                            <%}%>
+                        </li>
                         <li> <p>投诉建议：</p></li>
-                        <li><p>15611sas51@qq.com</p></li>
+                        <li><p>473861658@qq.com</p></li>
                     </ul>
 
 
@@ -110,9 +141,15 @@
                 <br>
                 <div>
                     <ul>
-                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li>
+                            <% for(let i=0;i< data.length;i++){%>
+                            <% if(data[i].sort==7){%>
+                            <img  src="<%=data[i].banner%>"/>
+                            <%}%>
+                            <%}%>
+                        </li>
                         <li> <p>联系电话：</p></li>
-                        <li><p>159326155151</p></li>
+                        <li><p>15680153538</p></li>
                     </ul>
 
 
@@ -120,7 +157,13 @@
                 <br>
                 <div>
                     <ul>
-                        <li><img src="../img/ico1.png" height="16" width="18"/></li>
+                        <li>
+                            <% for(let i=0;i< data.length;i++){%>
+                            <% if(data[i].sort==7){%>
+                            <img  src="<%=data[i].banner%>"/>
+                            <%}%>
+                            <%}%>
+                        </li>
                         <li> <p>公司地址：</p></li>
                         <li><p>四川省成都市武侯区天府三街云华路333号</p></li>
                     </ul>
@@ -129,13 +172,20 @@
                 </div>
             </li>
             <li>
-                <img src="../img/about4.png" /></li>
+                <% for(let i=0;i< data.length;i++){%>
+                <% if(data[i].sort==6){%>
+                <img  src="<%=data[i].banner%>"/>
+                <%}%>
+                <%}%>
+               </li>
         </ul>
     </div>
 
-</footer>
+</div>
 <%-include('footer.html')%>
+
 </body>
-<script src="/js/Aboutus.js"></script>
+<script src="./plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="./js/Aboutus.js"></script>
 <script src="./js/head.js"></script>
 </html>

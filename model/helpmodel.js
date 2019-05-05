@@ -1,9 +1,9 @@
 const sqlpool = require("./sqlpool");
 module.exports = {
-    help:(text,callback)=>{
-        let sql = `SELECT * FROM xsj.help;`;
-        let b=[text];
-        sqlpool.query(sql,b,callback);
+    help:([text,src],callback)=>{
+        let sql = `SELECT * FROM xsj.help ;`;
+        let b=[text,src];
+        sqlpool.sqlpool(sql,b,callback);
     },
     /*查询具体活动图片列表*/
 // ImgControlle : (id,callback)=>{

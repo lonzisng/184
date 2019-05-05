@@ -1,9 +1,10 @@
-const db = require("./sqlpool");
+const sqlpool = require("./sqlpool");
 module.exports = {
     about:(banner,callback)=>{
         let sql = `SELECT * FROM advertisement where attr='aboutUs'`;
         console.log(sql);
-        db.sqlpool(sql,[banner],callback); 
+        let b=[banner];
+        sqlpool.sqlpool(sql,b,callback);
     },
     /*查询具体活动图片列表*/
 // ImgControlle : (id,callback)=>{
@@ -11,6 +12,9 @@ module.exports = {
 //     let param = [id];
 //     sqlPool.query(sql,param,callback);
 // }
+
+
+
 };
 
 

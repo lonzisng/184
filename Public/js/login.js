@@ -5,35 +5,39 @@
 $(function () {
     //登陆添加点击事件
     $("#Add").click(function () {
-            let account = $("#account").val(),  //获取账户输入值
-                pwd = $("#pwd").val(),   //获取密码输入值
-                verify = $("#verify").val(),   //获取验证码输入值
-                H = panduan(account,pwd);
-               if(H==0){
-                  return;
-        }else if (H==1) {
-                   let text1 = "";
-                   //格式对的去发起请求验证密码
-                   let pares = $("#formLand").serialize();
-                   ajaxFn("post","/userForm.do",pares,function (data) {
-                       let obj = JSON.parse(data);
-                       if (obj.code ==1){
-                           location.href="/page/shopCart.html";
-                       }else {
-                           text1 = "* 账号或密码错误";
-                           $(".helpBlock2").text(text1);
-                           $(".helpBlock2").show();
-                       }
-                   })
-               }
-
-            //自动去除空格
-            $.trim(account);
-            $.trim(pwd);
-            $.trim(verify);
-
-
-        });
+        let account = $("#account").val(),  //获取账户输入值
+            pwd = $("#pwd").val(),   //获取密码输入值
+            verify = $("#verify").val(),   //获取验证码输入值
+            H = panduan(account,pwd);
+            if(H==0){
+                return;
+            }else if (H==1) {
+                let dizhi = document.referrer;
+                let zhuce = "http://localhost:8080/register.html";
+                let text1 = "";
+                //格式对的去发起请求验证密码
+                let pares = $("#formLand").serialize();
+                ajaxFn("post","/userForm.do",pares,function (data) {
+                    let obj = JSON.parse(data);
+                    sessionStorage.setItem("user",JSON.stringify(obj.session));
+                    if (obj.code ==1){
+                        if (dizhi == zhuce) {
+                            location.href="index.html";
+                        }else {
+                            location.href=dizhi;
+                        }
+                    }else {
+                        text1 = "* 账号或密码错误";
+                        $(".helpBlock2").text(text1);
+                        $(".helpBlock2").show();
+                    }
+                })
+            }
+        //自动去除空格
+        $.trim(account);
+        $.trim(pwd);
+        $.trim(verify);
+    });
 
     //这里是对账号正则判断
     function panduan(account,pwd){

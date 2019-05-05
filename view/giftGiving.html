@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>送礼精品</title>
+    <link rel="stylesheet" href="./css/gift.css">
+</head>
+<!--送礼精品-->
+<body>
+<%-include('head.html')%>
+<!--轮播-->
+<section>
+    <div id="lunbobox">
+        <div class="lunbo">
+            <div class="lunbo">
+                <% for(let i =0;i< data.lenth && i < 5;i++){%>
+                <a href="#"><img src= "<%=data[i].banner%>"></a>
+                <% }%>
+            </div>
+        </div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <span></span>
+    </div>
+</section>
+<!--优选零食-->
+<section class="products">
+    <div class="content">
+        <div class="xian1"></div>
+        <div class="pinzhi">
+            <% for(let i=0;i< data.length;i++){%>
+            <% if(data[i].goods_name=='菇'){%>
+            <div><img src="/img/goods<%=data[i].route%>"></div>
+            <%}%>
+            <%}%>
+            <div>
+                <h2>优选零食</h2>
+                <p>Choose snacks of high quality</p>
+            </div>
+            <% for(let i=0;i< data.length;i++){%>
+            <% if(data[i].goods_name=='辣条'){%>
+            <div><img src="/img/goods<%=data[i].route%>"></div>
+            <%}%>
+            <%}%>
+        </div>
+
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='干'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+        </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='糕'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+        </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='酱'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+        </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='酒'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+        </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+</section>
+<!--品质特产-->
+<section class="products">
+    <div class="content">
+        <div class="xian1"></div>
+        <div class="pinzhi">
+            <% for(let i=0;i< data.length;i++){%>
+            <% if(data[i].goods_name=='鱿鱼丝'){%>
+            <div><img src="/img/goods<%=data[i].route%>"></div>
+            <%}%>
+            <%}%>
+            <div>
+                <h2>品质特产</h2>
+                <p>Brand Quality Specialty</p>
+            </div>
+            <% for(let i=0;i< data.length;i++){%>
+            <% if(data[i].goods_name=='葡萄'){%>
+            <div><img src="/img/goods<%=data[i].route%>"></div>
+            <%}%>
+            <%}%>
+        </div>
+
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='牛肉'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+            </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='奶'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+        </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='糖'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+        </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+    <div class="goods">
+        <% for(let i=0;i< data.length;i++){%>
+        <% if(data[i].goods_name=='鱼'){%>
+        <a href="/goodsDetail.do?g=<%=data[i].goods_id%>">
+        <img src="/img/goods<%=data[i].route%>" style="width: 260px;height: 300px;">
+        </a>
+        <h4><%=data[i].goods_name%></h4>
+        <p>￥<%=data[i].price%><span class="icon icon-gouwuche" id="111"></span></p>
+        <%}%>
+        <%}%>
+    </div>
+    </section>
+<!--送礼专区-->
+<section>
+    <div class="content">
+        <div class="xian1"></div>
+        <div class="songli">
+            <h2>送礼专区</h2>
+            <p>Gift Gift Professional Area</p>
+        </div>
+        <div class="maojian">
+            <% for(let i=0;i< data.length;i++){%>
+            <% if(data[i].goods_name=='小罐茶精装'){%>
+            <div><img src="/img/goods<%=data[i].route%>"></div>
+            <div class="zhengwen">
+                <h2><%=data[i].goods_name%></h2>
+                <p><%=data[i].resume%></p>
+                <div>加入购物车</div>
+            </div>
+            <%}%>
+            <%}%>
+        </div>
+
+        <div class="yinmi">
+            <div>
+                <% for(let i=0;i< data.length;i++){%>
+                <% if(data[i].goods_name=='米参珍品阴米'){%>
+                <h2><%=data[i].goods_name%></h2>
+                <p><%=data[i].resume%></p>
+                <div>加入购物车</div>
+            </div>
+            <div><img src="/img/goods<%=data[i].route%>"></div>
+            </div>
+        <%}%>
+        <%}%>
+    </div>
+</section>
+<%-include('footer.html')%>
+<script src="./plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="./js/giftGiving.js"></script>
+<script src="./js/head.js"></script>
+</body>
+</html>

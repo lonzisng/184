@@ -6,11 +6,13 @@ module.exports={
         if (!err) {
             console.log(data);
             // data=>banner
-            for(let i=0;i<data.length;i++){
-                data[i].banner="img"+data[i].banner;
-            }
             db.explosion((err,date)=>{
-                console.log(err);
+                for(let i=0;i<data.length;i++){
+                    data[i].banner="img"+data[i].banner;
+                }
+                for (let i=0;i<date.length;i++){
+                    date[i].route="/img/goods"+date[i].route;
+                }
                 console.log(date);
                 // data=>food
                 if(!err){

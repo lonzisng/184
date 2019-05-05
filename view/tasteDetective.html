@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/detectiveTaste.css">
+</head>
+<body>
+<%-include("head.html")%>
+<section class="header">
+    <div class="subnav">
+        <div>
+            <div><strong>地区：</strong></div>
+            <div>
+                <ul>
+                    <li>
+                        <a>华北地区</a>
+                    </li>
+                    <li>
+                        <a>华东地区</a>
+                    </li>
+                    <li>
+                        <a>华南地区</a>
+                    </li>
+                    <li>
+                        <a>华北地区</a>
+                    </li>
+                    <li>
+                        <a>华中地区</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div><strong>小食分类：</strong></div>
+            <div>
+                <ul>
+                <% for(let i=0;i< splb.length;i++){ %>
+                    <li data-id="<%=splb[i].id %> "><%=splb[i].splb_name %></li>
+                <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div id="main">
+        <div id="container">
+            <div>
+                <% for(let i=0;i< data.length ;i=i+3){%>
+                <a href="/articleDetail.do?a=<%=data[i].id %>"><div data-tag="<%=data[i].tag%>"><img data-id="<%=data[i].id%>" src="img<%=data[i].pic%>" alt=""></div></a>
+                <% } %>
+            </div>
+
+            <div>
+                <% for(let i=1;i< data.length ;i=i+3){%>
+                <a href="/articleDetail.do?a=<%=data[i].id %>"><div data-tag="<%=data[i].tag%>"><img data-id="<%=data[i].id%>" src="img<%=data[i].pic%>" alt=""></div></a>
+                <% } %>
+            </div>
+
+            <div>
+                <% for(let i=2;i< data.length ;i=i+3){%>
+                <a href="/articleDetail.do?a=<%=data[i].id %>"><div data-tag="<%=data[i].tag%>"><img data-id="<%=data[i].id%>" src="img<%=data[i].pic%>" alt=""></div></a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+<%-include("footer.html")%>
+<script src="../plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="../js/head.js"></script>
+</body>
+</html>

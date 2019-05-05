@@ -1,3 +1,4 @@
+
 $(function(){
     $(window).scroll(function(){
         let top=$(document).scrollTop();
@@ -54,4 +55,14 @@ $(function(){
             }
         },1);
     })
+    if(location.pathname=="/login.html"||location.pathname=="/register.html"){
+        sessionStorage.removeItem("user");
+    }
+    if(sessionStorage.getItem("user")!=null){
+        $("#userCenter").show();
+    }else{
+        $("#unlogin").show();
+    }
+
+
 })

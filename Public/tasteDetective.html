@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="less/detectiveTaste.css">
 </head>
-<!--口味侦探-->
 <body>
+<header>
+    <div class="subnav">
+        <div>
+            <div><strong>地区：</strong></div>
+            <div>
+                <ul>
+                    <li>
+                        <a>华北地区</a>
+                    </li>
+                    <li>
+                        <a>华东地区</a>
+                    </li>
+                    <li>
+                        <a>华南地区</a>
+                    </li>
+                    <li>
+                        <a>华北地区</a>
+                    </li>
+                    <li>
+                        <a>华中地区</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div><strong>小食分类：</strong></div>
+            <div>
+                <ul>
+                    <li>
+                        <a>水果</a>
+                    </li>
+                    <li>
+                        <a>烘焙</a>
+                    </li>
+                    <li>
+                        <a>小吃</a>
+                    </li>
+                    <li>
+                        <a>热菜</a>
+                    </li>
+                    <li>
+                        <a>汤粥</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div id="main">
+        <div id="container">
+            <div class="divHeight">
+                <div><img src="imgs/1.jpg" alt=""></div>
+<!--                <div id="tanchu"></div>-->
+            </div>
+            <div><img src="imgs/2.jpg" alt=""></div>
+            <div><img src="imgs/3.jpg" alt=""></div>
+        </div>
+    </div>
+</section>
+<footer></footer>
+<script type="text/javascript">
 
+    window.onload = function () {
+        let img = document.getElementsByTagName("img")[0];
+        let meng=document.getElementsByClassName("divHeight")[0];
+        let ht = img.height;
+        console.log(ht);
+        meng.style.height=ht+"px";
+    }
+
+</script>
 </body>
 </html>

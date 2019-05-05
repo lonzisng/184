@@ -1,0 +1,105 @@
+@import "public";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/*地区分类*/
+.subnav {
+  width: 1100px;
+  margin: @lgMargin auto;
+}
+
+.header strong {
+  float: left;
+  padding: 13px 20px;
+  font-size: @xsFont;
+}
+
+.header:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header ul li {
+  float: left;
+  padding: 13px 35px;
+  font-size: @xsFont;
+}
+
+ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header ul li:hover {
+  background-color: #cfa972;
+  color: #FFFFFF;
+}
+
+/*小食分类覆盖部分导航*/
+.header > .subnav > div:nth-child(2) li {
+  padding: 8px 30px;
+}
+
+.header > .subnav > div:nth-child(2) strong {
+  padding: 8px 20px;
+}
+
+/*
+section瀑布流部分
+清除瀑布流浮动，给父级元素添加伪类
+*/
+
+#container:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/*瀑布流父级id*/
+#container {
+  /*border: 1px solid green;*/
+  width: 1164px;
+  margin: auto;
+}
+
+/*瀑布流布局每个盒子的宽度*/
+#main > #container > div {
+  float: left;
+  width: 383px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+/*设置瀑布流图片的宽度*/
+#main #container div img {
+  width: 383px;
+}
+
+/*设置蒙板移入的效果*/
+.divHeight {
+  width: 383px;
+  positon: relative;
+  overflow: hidden;
+}
+
+#tanchu {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.58);
+  height: 30px;
+  bottom: -30px;
+  width: 383px;
+}
+
+.divHeight:hover #tanchu {
+  bottom: 0;
+  left:30px;
+}

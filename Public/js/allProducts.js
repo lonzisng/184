@@ -294,4 +294,30 @@ $(function(){
             }
         })
     })
+
+    $("#products").on("click",".shopcard",function(){
+        let goods = $(this).parent().parent();
+        let goodsId = goods.attr("data-id");
+        let newPrice = $(this).parent().text().split(" ")[1];
+        let sortId = 1;
+        let amount = 1;
+        let param = "goodsId="+goodsId+"&sortId="+sortId+"&newPrice="+newPrice+"&amount="+amount;
+        // $.ajax({
+        //     url:"/addToCard.do",
+        //     type:"post",
+        //     data:param,
+        //     cache:false,
+        //     processData: false,
+        //     success:(data)=>{
+        //         if(data.code===200){
+        //             $("#addToCard").text("加入成功");
+        //             setTimeout(function(){
+        //                 $("#addToCard").text("加入购物车");
+        //             },1000);
+        //         }else{
+        //             location.href="login.html";
+        //         }
+        //     }
+        // }) 
+    })
 })

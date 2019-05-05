@@ -58,7 +58,6 @@ module.exports = {
     },
     splbGoods(req,res){
         let id = req.body.id;
-        console.log(id);
         allProductsModel.splbGoods(id,(err,data)=>{
             if(!err){
                 if(data.length>0){

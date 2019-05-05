@@ -57,7 +57,7 @@ $(function () {
             commodity[i].Shop_Num;
             A = commodity[i].price*commodity[i].Shop_Num;
             $("#displayGoods").append(`<tr>
-                         <td><img src="${src}" alt=""><span>${commodity[i].name}</span></td>
+                         <td><img src="${src}" alt=""><span>${commodity[i].goods_name}</span></td>
                          <td><p>${commodity[i].price}</p></td>
                          <td><p>${commodity[i].Shop_Num}</p></td>
                          <td><span style="color: #E83518" class="Subtotal">${A}</span></td>
@@ -114,7 +114,7 @@ $(function () {
             commodity[i].Shop_Num;
             A = commodity[i].price*commodity[i].Shop_Num;
             $("#Merchandise").append(`
-                   <li><span>商品名称:</span><span>${commodity[i].name}</span><span>${zong}</span><span>元</span></li>
+                   <li><span>商品名称:</span><span>${commodity[i].goods_name}</span><span>${zong}</span><span>元</span></li>
                    <li><span>交易金额:</span><span>${A}</span><span>元</span></li>
                    <li><span>购买时间:</span><span>${Timee}</span></li>
                    <li><span>交易类型:</span><span>网银转账</span></li>
@@ -124,33 +124,42 @@ $(function () {
 
     });
 
-    //验证支付密码
+    //验证支付密码  顺便提交订单详情表
     $("#paymentButton").click(()=>{
         let arr = $("#formPayWsd").serialize();
         ajaxFn("post","/Paywsd.do",arr,(data)=>{
             let obj = JSON.parse(data);
             if (obj.code==1){
                  $("#paymentt").show();
+                for (let i=0;i<$("#formPayWsd").find("input").length;i++){
+                    $("#formPayWsd").find("input:eq("+i+")").val("");
+                }
                  setTimeout(()=>{
-                 location.href="../index.html";
+                 location.href="../userCenter.html";
                },2000);
-            }else if (obj.code == 2){
+                let A = $("#zongjia").text();
+                ajaxFn("post","/orderDetails.do","A="+A,(data)=>{
 
+
+                },true)
+
+            }else if (obj.code == 2){
                 alert("支付密码错误"+"\n"+"请重新输入");
+                for (let i=0;i<$("#formPayWsd").find("input").length;i++){
+                    $("#formPayWsd").find("input:eq("+i+")").val("");
+                }
             }
         })
-    })
+    });
 
     //提交订单有问题
     //提交订单  并且获取商品订单详情
-    // $("#placeOrder").click(()=>{
-    //     let A = $("#addres").find("div.address:first").find("p:last").text(),
-    //         B = $("#zongjia").text(),
-    //         C = "A="+A + "&B="+B;
-    //     console.log(C);
-    //     ajaxFn("post","/order.do",C,(data)=>{
-    //         console.log("我已经提交上去咯");
-    //         console.log(data)
-    //     })
-    // });
+    $("#placeOrder").click(()=>{
+        let A = $("#addres").find("div.address:first").find("p:last").text(),
+            B = $("#zongjia").text(),
+            C = "A="+A + "&B="+B;
+        ajaxFn("post","/order.do",C,(data)=>{
+
+        },true)
+    });
 });

@@ -1,8 +1,13 @@
 @import "./public.less";
-
-
 .transit{
     transition: all .1s linear;
+}
+*,::before,::after{
+    box-sizing: content-box !important;
+}
+a:hover{
+    color: @dotColor;
+    text-decoration: none;
 }
 header {
     width: 100%;
@@ -17,6 +22,7 @@ header {
         .transit;
         h1 {
             float: left;
+            margin: 0;
             .transit;
             img {
                 height: 50px;
@@ -24,7 +30,6 @@ header {
                 .transit;
             }
         }
-
         ul {
             margin-left: @lgMargin;
             padding-left: @lgPadding;
@@ -77,26 +82,32 @@ header {
                     opacity: 1;
                 }
             }
+            li#userCenter,li#unlogin{
+                display: none;
+            }
         }
-
         ul:last-of-type {
             float: right;
             .transit;
+            li{
+                padding: @bgPadding @smPadding;
+            }
             li:hover{
                 color:#424242;
                 .transit;
             }
-            li>span {
+            li span {
                 font-size: 18px;
                 line-height: 52px;
-                .transit;
-            }
-            li>span:hover{
                 color: @dotColor;
                 .transit;
             }
+            li span:hover{
+                font-weight: bold;
+                .transit;
+            }
             li:first-child{
-                margin-right: @lgMargin;
+                margin-right: @smMargin;
                 height:18px;
                 padding:36px 0;
                 .transit;

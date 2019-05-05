@@ -24,44 +24,51 @@
             </div>
 <!--            添加地址-->
             <div class="addAddress">
-                <table>
-                    <tr>
+                <form action="" id="addressForm">
+                    <table>
+                        <tr>
                             <th>联系人</th>
-                            <td><input type="text"></td>
+                            <td>
+                                <input type="text" name="people"><br/>
+                                <span class="tips1" hidden>*请输入中文</span>
+                            </td>
                         </tr>
-                    <tr>
+                        <tr>
                             <th>所在地区</th>
                             <td>
-                                <select name="" id="prov"></select>
-                                <select name="" id="city"></select>
+                                <select id="queryProvince" class="selectpicker" data-live-search="true" name="pro">
+                                    <option data-tokens="ketchup mustard" value="-1">请选择省</option>
+                                </select>
+
+                                <select id="queryCity" class="selectpicker" data-live-search="true" name="city">
+                                    <option data-tokens="ketchup mustard" value="请选择市">请选择市</option>
+                                </select>
+
+                                <select id="queryCounty" class="selectpicker" data-live-search="true"  name="county">
+                                    <option data-tokens="ketchup mustard" value="">请选择县区</option>
+                                </select>
                             </td>
                         </tr>
-                    <tr>
+                        <tr>
                             <th>详细地址</th>
                             <td>
-                                <textarea name="" id="" cols="21" rows="5"></textarea>
+                                <textarea id="" cols="21" rows="5" name="detailsAddress"></textarea><br/>
                             </td>
                         </tr>
-                    <tr>
+                        <tr>
                             <th>手机号码</th>
-                            <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                             <th>邮政编码</th>
-                             <td>
-                                 <input type="text">
-                             </td>
-                         </tr>
-                    <tr>
-                            <th></th>
-                            <td><input type="checkbox">设为默认地址</td>
-                    </tr>
-                    <tr>
-                         <td colspan="2">
-                             <button id="saveAddress">保存</button>
-                         </td>
-                    </tr>
-                </table>
+                            <td>
+                                <input type="text" name="number"><br/>
+                                <span class="tips2" hidden>*请输入11位的电话号码</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button id="saveAddress" type="button">保存</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
             <table class="myAddress" cellspacing="20">
                 <thead>
@@ -81,45 +88,46 @@
         </div>
 <!--        修改地址-->
         <div class="updateAddress">
-            <table>
-                <tr>
-                    <th>联系人</th>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <th>所在地区</th>
-                    <td>
-                        <select name="" id="updateProv"></select>
-                        <select name="" id="updateCity"></select>
-                    </td>
-                </tr>
-                <tr>
-                    <th>详细地址</th>
-                    <td>
-                        <textarea name="" cols="21" rows="5"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <th>手机号码</th>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <th>邮政编码</th>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <th></th>
-                    <td><input type="checkbox">设为默认地址</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button id="updateSave">保存</button>
-                        <button id="reset">取消</button>
-                    </td>
-                </tr>
-            </table>
+            <form action="" id="updateAddressForm">
+                <table>
+                    <tr>
+                        <th>联系人</th>
+                        <td><input type="text" name="uptaPeople"></td>
+                    </tr>
+                    <tr>
+                        <th>所在地区</th>
+                        <td>
+                            <select id="queryProvince1" class="selectpicker" data-live-search="true" name="pro">
+                                <option data-tokens="ketchup mustard" value="-1">请选择省</option>
+                            </select>
+
+                            <select id="queryCity2" class="selectpicker" data-live-search="true" name="city">
+                                <option data-tokens="ketchup mustard" value="请选择市">请选择市</option>
+                            </select>
+
+                            <select id="queryCounty3" class="selectpicker" data-live-search="true"  name="county">
+                                <option data-tokens="ketchup mustard" value="">请选择县区</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>详细地址</th>
+                        <td>
+                            <textarea name="" cols="21" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>手机号码</th>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="updateSave" type="button">保存</button>
+                            <button id="reset" type="button">取消</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
         <div class="divPage">
             <ul>

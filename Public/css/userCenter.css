@@ -414,7 +414,7 @@ section > .right > p {
 .myOrder > tbody > tr > td:nth-of-type(2) {
   line-height: 20px;
 }
-.myOrder > tbody > tr > td:nth-of-type(3) {
+.myOrder > tbody > tr > td:nth-of-type(4) {
   color: #e83518;
 }
 .myOrder span {
@@ -501,33 +501,27 @@ section > .right > p {
 .addAddress,
 .updateAddress {
   display: none;
-  border: 1px solid #d7d7d7;
+  box-shadow: 0 0 5px #cfa972;
   width: 500px;
   padding: 24px;
   position: absolute;
-  top: 50px;
+  top: 250px;
   left: 550px;
-  background: rgba(66, 66, 66, 0.5);
-  color: white;
+  background-color: #fff;
   margin: 0  auto;
 }
-.addAddress > table,
-.updateAddress > table {
+.addAddress > form > table,
+.updateAddress > form > table {
   width: 500px;
   height: 400px;
   text-align: left;
 }
-.addAddress > table tr,
-.updateAddress > table tr {
+.addAddress > form > table tr,
+.updateAddress > form > table tr {
   font-size: 14px;
 }
-.addAddress > table tr:nth-last-child(2) input,
-.updateAddress > table tr:nth-last-child(2) input {
-  width: 15px;
-  height: 15px;
-}
-.addAddress > table tr:nth-last-child(1) td,
-.updateAddress > table tr:nth-last-child(1) td {
+.addAddress > form > table tr:nth-last-child(1) td,
+.updateAddress > form > table tr:nth-last-child(1) td {
   border-top: 1px solid #d7d7d7;
 }
 .myAddress {
@@ -766,10 +760,12 @@ section > .right > p {
   z-index: 2;
   top: 200px;
   right: 200px;
-  background: rgba(66, 66, 66, 0.5);
+  background: #fff;
   display: none;
   font-size: 14px;
-  border: 1px solid #d7d7d7;
+  overflow: hidden;
+  padding: 24px;
+  box-shadow: 0 0 5px #cfa972;
   width: 500px;
   margin: 0  auto;
 }

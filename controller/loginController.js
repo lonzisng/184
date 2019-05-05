@@ -43,10 +43,12 @@ module.exports={
         let user = req.body.user,
             pwd = req.body.pwd;
         userModal.login(user,pwd,(err,data) =>{
-            req.session.userName = data;
+            console.log(data);
             if (!err) {
                 if (data.length>0) {
-                    res.send({code:1,message:"登陆成功"});
+                    req.session.userName = data;
+                    let u = {id:data[0].user_id,avatar:data[0].avatar};
+                    res.send({code:1,message:"登陆成功",session:u});
                 }else {
                     res.send({code:0,message:"账号或密码错误"});
                 }
@@ -63,7 +65,7 @@ module.exports={
            pageSize = req.body.pageSize,
            name = obj[0].user_id;
       userModal.orderGoods(name,currentPage,pageSize,(err,data)=>{
-          req.session.goodes = data;
+          console.log(err);
           if (!err){
               res.send({code:1,message:data});
           }else {
@@ -145,12 +147,11 @@ module.exports={
             price.push(req.session.goodes[i].price);
             Shop_Num.push(req.session.goodes[i].Shop_Num);
         }
-        console.log(req.session.goodes);
         userModal.order(goodsId,userId,stock,price,Shop_Num,zongjia,dizhi,(err,data)=>{
             if (!err){
                 res.send({code:1,message:data});
             }else {
-                res.send({code:-1,message:"地址呢"});
+                res.send({code:-1,message:"订单呢"});
             }
         })
     },
@@ -160,12 +161,33 @@ module.exports={
         let pwd = req.body.P1+req.body.P2+req.body.P3+req.body.P4+req.body.P5+req.body.P6,
             userId = req.session.userName[0].user_id;
         userModal.Paywsd(pwd,userId,(err,data)=>{
-            console.log(1);
-            console.log(data);
             if (data.length>0){
                 res.send({code:1,message:"支付成功"});
             }else {
                 res.send({code:2,message:"支付失败"});
+            }
+        })
+    },
+
+    //提交订单详情表
+    orderDetails(req,res){
+        let userid = req.session.userName[0].user_id,  //用户id
+            goodsid = [],  //商品ID
+            attid = [],
+            shopNum = [],
+            price = [],
+            zongjia = req.body.A;  //总价
+        for (let i=0;i<req.session.goodes.length;i++){
+            goodsid.push(req.session.goodes[i].goods_id);
+            price.push(req.session.goodes[i].price);
+            shopNum.push(req.session.goodes[i].Shop_Num);
+            attid.push(req.session.goodes[i].order_id)
+        }
+        userModal.orderDetails(userid,goodsid,attid,shopNum,price,zongjia,(err,data)=>{
+            if (!err){
+                res.send({code:1,message:data});
+            }else {
+                res.send({code:-1,message:"订单呢"});
             }
         })
     }

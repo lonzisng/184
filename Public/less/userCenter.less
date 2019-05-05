@@ -144,7 +144,7 @@ section{
   >tbody>tr>td:nth-of-type(2){
     line-height: 20px;
   }
-  >tbody>tr>td:nth-of-type(3){
+  >tbody>tr>td:nth-of-type(4){
     color: #e83518;
   }
   span{
@@ -232,25 +232,21 @@ section{
 }
 .addAddress,.updateAddress{
     display: none;
-    border: 1px solid @borderColor;
+    box-shadow:0 0 5px @dotColor;
     width: 500px;
     padding: @bgPadding;
     position: absolute;
-    top:50px;
+    top:250px;
     left:550px;
-    background: rgba(66,66,66,.5);
-    color:white;
+    background-color: #fff;
+
     .center();
-      >table{
+     >form >table{
         width: 500px;
         height:400px;
         text-align: left;
         tr{
           font-size: @xsFont;
-        }
-        tr:nth-last-child(2) input{
-          .input();
-
         }
         tr:nth-last-child(1) td{
           border-top: 1px solid @borderColor;
@@ -500,10 +496,12 @@ section{
   z-index: 2;
   top:200px;
   right: 200px;
-  background: rgba(66,66,66,.5);
+  background: #fff;
   display: none;
   font-size: @xsFont;
-  border: 1px solid @borderColor;
+  overflow: hidden;
+  padding: @bgPadding;
+  box-shadow: 0 0 5px @dotColor;
   width: 500px;
   .center();
   table{

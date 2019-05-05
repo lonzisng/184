@@ -28,7 +28,7 @@
     </div>
     <div class="console">
         <div><span class="tag"><%=goods[0].label%></span></div>
-        <h3 data-id="12314"><%=goods[0].goods_name%></h3>
+        <h3 id="goodsName" data-id="<%=goods[0].goods_id%>"><%=goods[0].goods_name%></h3>
         <p><%=goods[0].goods_resume%></p>
         <div class="price">
             <div>
@@ -64,7 +64,7 @@
             <div><span id="reduce">-</span><input type="text" value="1" id="num" name="num"/><span id="add">+</span></div>
         </div>
         <div class="buy">
-            <div id="toPay" class="toPay">立即购买</div><div class="cart" id="addToCart">加入购物车</div>
+            <div class="cart" id="addToCard">加入购物车</div>
         </div>
     </div>
     <div class="shareBar">

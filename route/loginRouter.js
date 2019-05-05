@@ -13,4 +13,5 @@ loginRouter.post("/shoucang.do",loginController.shou);    //加入收藏
 loginRouter.post("/dizhi.do",loginController.dizhi);    //获取地址
 loginRouter.post("/order.do",loginController.order);    //提交订单
 loginRouter.post("/Paywsd.do",loginController.Paywsd);    //验证支付密码
+loginRouter.post("/orderDetails.do",loginController.orderDetails);    //提交订单详情
 module.exports = loginRouter;  //暴露出去路由

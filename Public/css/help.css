@@ -281,33 +281,33 @@ button {
 .clear {
   clear: both;
 }
-header {
+.header {
   height: 50px;
   padding-left: 50px;
   position: relative;
 }
-header > h5 {
+.header > h5 {
   position: absolute;
   top: 15px;
 }
-header > hr {
+.header > hr {
   width: 1100px;
   position: absolute;
   bottom: 0 ;
 }
-section {
+.section {
   padding-left: 50px;
   padding-top: 30px ;
   position: relative;
 }
-section > h3 {
+.section > h3 {
   font-size: 16px;
   padding-bottom: 20px;
 }
-section > .nav {
+.section > .nav {
   position: relative;
 }
-section > div > ul > li:last-of-type {
+.section > div > ul > li:last-of-type {
   border: 1px solid rgba(99, 99, 99, 0.3);
   margin-top: 30px;
   padding-top: 10px;
@@ -315,19 +315,19 @@ section > div > ul > li:last-of-type {
   background-color: white;
   font-size: 14px;
 }
-section > div > ul > li {
+.section > div > ul > li {
   clear: both;
   background-color: #cfa972;
   width: 180px;
 }
-section > div > ul > li > span > hr {
+.section > div > ul > li > span > hr {
   width: 5px;
   position: absolute;
   top: 17px;
   left: 135px;
   border: 1px solid #ffffff;
 }
-section > div > ul > li > a {
+.section > div > ul > li > a {
   font: "Microsoft YaHei";
   font-size: 16px;
   color: white;
@@ -335,81 +335,272 @@ section > div > ul > li > a {
   text-align: center;
   padding: 5px 0;
 }
-section > div > ul > li > ul {
-  display: none;
-}
-section > div > ul > li > ul > li {
+.section > div > ul > li > ul > li {
   width: 180px;
-  height: 40px;
+  height: 30px;
   background-color: white;
   clear: both;
 }
-section > div > ul > li > ul > li > :hover {
+.section > div > ul > li > ul > li > :hover {
   background-color: rgba(99, 99, 99, 0.3);
 }
-section > div > ul > li > ul > li > a {
+.section > div > ul > li > ul > li > a {
   font-size: 14px;
   display: block;
   text-align: center;
-  padding: 5px 0;
+  padding: 6px 0;
 }
-section > .text1 {
-  width: 1000px;
+.section > .text > .text1 {
+  width: 900px;
   position: absolute;
   top: 100px;
   left: 300px;
 }
-section > .text1 > h5 {
+.section > .text > .text1 > div {
+  width: 150px;
+  height: 46px;
+  border: 1px solid rgba(99, 99, 99, 0.3);
+}
+.section > .text > .text1 > div > p {
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.section > .text > .text1 > div > p:nth-of-type(2) {
+  font-size: 12px;
+}
+.section > .text > .text1 > h5 {
   font-size: 14px;
   padding-bottom: 20px;
 }
-section > .text1 > p {
+.section > .text > .text2 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text2 > h5 {
   font-size: 14px;
-  line-height: 32px;
-  width: 1000px  ;
+  padding-bottom: 20px;
 }
-section > .text2 {
-  width: 1000px;
+.section > .text > .text2 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text3 {
+  width: 900px;
   position: absolute;
   top: 100px;
   left: 300px;
   display: none;
 }
-section > .text2 > h5 {
-  font-size: 16px;
+.section > .text > .text3 > h5 {
+  font-size: 14px;
   padding-bottom: 20px;
 }
-section > .text2 > p {
+.section > .text > .text3 > p {
   line-height: 32px;
-  width: 1000px  ;
+  width: 900px  ;
 }
-section > .text3 {
-  width: 1000px;
+.section > .text > .text4 {
+  width: 900px;
   position: absolute;
   top: 100px;
   left: 300px;
   display: none;
 }
-section > .text3 > h5 {
-  font-size: 16px;
+.section > .text > .text4 > h5 {
+  font-size: 14px;
   padding-bottom: 20px;
 }
-section > .text3 > p {
+.section > .text > .text4 > p {
   line-height: 32px;
-  width: 1000px  ;
+  width: 900px  ;
 }
-section > .text4 {
-  width: 1000px;
+.section > .text > .text5 {
+  width: 900px;
   position: absolute;
   top: 100px;
   left: 300px;
   display: none;
 }
-section > .text4 > h5 {
-  font-size: 16px;
+.section > .text > .text5 > h5 {
+  font-size: 14px;
   padding-bottom: 20px;
 }
-section > .text4 > p {
+.section > .text > .text5 > p {
   line-height: 32px;
-  width: 1000px  ;
+  width: 900px  ;
+}
+.section > .text > .text6 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text6 > table {
+  border: 1px solid rgba(99, 99, 99, 0.3);
+}
+.section > .text > .text6 > table tbody > tr > td {
+  border: 1px solid rgba(99, 99, 99, 0.3);
+}
+.section > .text > .text6 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text6 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text7 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text7 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text7 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text8 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text8 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text8 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text9 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text9 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text9 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text10 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text10 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text10 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text11 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text11 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text11 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text12 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text12 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text12 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text13 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text13 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text13 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text14 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text14 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text14 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text15 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text15 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text15 > p {
+  line-height: 32px;
+  width: 900px  ;
+}
+.section > .text > .text16 {
+  width: 900px;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  display: none;
+}
+.section > .text > .text16 > h5 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.section > .text > .text16 > p {
+  line-height: 32px;
+  width: 900px  ;
 }

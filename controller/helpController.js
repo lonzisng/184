@@ -2,12 +2,13 @@
 //严格模式
 'use static';
 
-const helpmodel = require("../model/helpmodel");
+const db = require("../model/helpmodel");
 
 module.exports = {
     helpControlle : (request,response) => {
         let a=request.src;
-        helpmodel.help(a,(err,data)=>{
+        let b=request.text;
+        db.help([a,b],(err,data)=>{
             console.log(data);
             if(!err){
                 if(data.length > 0){

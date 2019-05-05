@@ -77,6 +77,34 @@ $(function(){
         $("#messageTag").removeClass("checked");
         $("#reviewTag").addClass("checked");
     })
-
+    $("#addToCard").click(()=>{
+        let goodsId = $("#goodsName").attr("data-id");
+        let newPrice = $("#newPrice").text();
+        let sortId = $("#sort").find(".checked").attr("data-attid");
+        let amount = $("#num").val();
+        let param = "goodsId="+goodsId+"&sortId="+sortId+"&newPrice="+newPrice+"&amount="+amount;
+        $.ajax({
+            url:"/addToCard.do",
+            type:"post",
+            data:param,
+            cache:false,
+            processData: false,
+            success:(data)=>{
+                if(data.code===200){
+                    $("#addToCard").text("加入成功");
+                    setTimeout(function(){
+                        $("#addToCard").text("加入购物车");
+                    },1000);
+                }else if(data.code===-200){
+                    $("#addToCard").text("已存在商品");
+                    setTimeout(function(){
+                        $("#addToCard").text("加入购物车");
+                    },1000);
+                }else{
+                    location.href="login.html";
+                }
+            }
+        })
+    })
 })
        

@@ -13,13 +13,13 @@ module.exports={
         // console.log(name);
         userModel.orderList(id,(err,data)=>{
             // console.log(err);
-            // console.log(data.length);
+            // console.log(data);
             if(!err){
                 //判断订单状态
                 for(let i=0;i<data.length;i++){
                     // console.log(data[i].state);
 
-                    // console.log(data[i].state);
+                    // console.log(data[i].goods_name);
                     let time=new Date();
                     data[i].create_time=time.toLocaleString();
                 }
@@ -93,11 +93,35 @@ module.exports={
     },
     //状态
     getState(req,res){
-        let state=req.body.userName;
+        let state=req.body.state;
         let id=req.body.id;
         console.log(state);
         console.log(id);
         userModel.getState(state,id,(err,data)=>{
+            // console.log(data);
+            // console.log(err);
+            if(!err){
+                res.send({code:200,message:data});
+            }else{
+                res.send({code:700,message:"数据库出错"});
+            }
+        })
+    },
+    //添加地址
+    getAddAddress(req,res){
+        let obj=req.session.userName,
+            id = obj[0].user_id,
+            people=req.body.people,
+            pro=req.body.pro,
+            city=req.body.city,
+            county=req.body.county,
+            detailsAddress=req.body.detailsAddress,
+            number=req.body.number;
+        // console.log(req.body);
+        // console.log(people);
+        // console.log(pro[1]);
+
+        userModel.getAddAddress(id,people,number,pro[1],city[1],county[1],detailsAddress,(err,data)=>{
             // console.log(data);
             // console.log(err);
             if(!err){

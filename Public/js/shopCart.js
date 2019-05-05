@@ -22,9 +22,14 @@ $(function () {
        let arr = "currentPage="+currentPage+"&pageSize="+pageSize;
        ajaxFn("post","/commodity.do",arr,(data)=>{
            let obj = JSON.parse(data);
-           commodity = obj.message;
-           xianshi();
-           tongji();
+           if (obj.message.length>0){
+               commodity = obj.message;
+               xianshi();
+               tongji();
+           }else {
+               $("#form1").hide();
+               $("#form2").show();
+           }
        },true)
    };
 
@@ -40,7 +45,7 @@ $(function () {
             A = commodity[i].price*commodity[i].Shop_Num;
             $("#displayGoods").append(`<tr>
                          <td><input type="checkbox" class="checkalles" checked="checked" data-id="${commodity[i].id}"></td>
-                         <td><img src="${src}" alt=""><span>${commodity[i].name}</span></td>
+                         <td><img src="${src}" alt=""><span>${commodity[i].goods_name}</span></td>
                          <td><p class="UnitPrice">${commodity[i].price}</p></td>
                          <td><div><p class="jian" data-id="${commodity[i].id}">-</p><p class="Numberr">${commodity[i].Shop_Num}</p><p class="jia" data-id="${commodity[i].id}">+</p></div></td>
                          <td><span style="color: #E83518" class="Subtotal">${A}</span></td>

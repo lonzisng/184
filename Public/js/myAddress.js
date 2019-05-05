@@ -4,86 +4,248 @@
  * @date 2019/4/28 9:58
  */
 // 添加地址
-$("#add").click(function () {
+$(".right").on("click","#add",function () {
     //打开添加窗口
     $(".addAddress").show();
+    $("#addressForm").find("input").val("");
+    var provinceArr = new Array();
+    var cityArr;
+    var $selectProvince;
+    var $selectCounty;
+    var $selectCity;
 
-    //定义省市的信息
-    var provList = ['江苏','浙江','福建','湖南'];
-    var cityList = [];
-    cityList[0] = ['南京', '苏州', '宿迁', '扬州'];
-    cityList[1] = ['杭州', '温州', '宁波', '台州'];
-    cityList[2] = ['福州', '厦门', '泉州', '漳州'];
-    cityList[3] = ['长沙', '湘潭', '株洲', '湘西'];
+    $("#queryProvince").click(showCities);
 
-//获取select元素
-    var provSelect = document.querySelector('#prov');
-    var citySelect = document.querySelector('#city');
+    $(function() {
 
-//把省的信息 添加到第一个select元素中
-    provList.forEach(function(val, index){
-        //DOM操作  了解
-        provSelect.add(new Option(val, index))
+        $selectProvince = $("#queryProvince");
+        $selectCounty = $("#queryCounty");
+        $selectCity = $("#queryCity");
+        getJson();
+
     });
-//给第一个select绑定change事件
-    provSelect.onchange = function(){
-        //获取 当前的选项
-        var index = this.value;
 
-        //清空第二个select原先内容
-        citySelect.length = 0;
+    function getJson() {
+        //加载本地的json文件
+        $.getJSON("js/address.json", function(data) {
 
-        //选择对应的城市列表，添加到第二个select
-        cityList[index].forEach(function(val, index){
-            citySelect.add(new Option(val, index));
-        })
-    };
-//手工触发一次 change事件
-    provSelect.onchange();
+            $.each(data, function(index, info) {
+
+                provinceArr[index] = info;
+
+                var $option = $("<option>" + info.area_name + "</option>");
+
+                $option.val(index);
+
+                $option.appendTo($selectProvince);
+
+            });
+
+        });
+
+    }
+
+    function showCities() {
+
+        cityArr = new Array();
+
+        var cityJson = provinceArr[$selectProvince.val()].city ;//获取当前省的所有市区的数据
+
+        $selectCity.empty();
+
+        $selectCounty.empty();
+
+        $.each(cityJson, function(i, data) {
+
+            cityArr[i] = data;
+
+            var $option = $("<option>" + data.area_name + "</option>");
+
+            $option.val(i);
+
+            $selectCity.append($option);
+
+        });
+
+        $("#queryCity").click(showCounty);;
+    }
+
+    function showCounty() {
+
+        $selectCounty.empty();
+
+        var countyJson = cityArr[$("#queryCity").val()].district //获取当前市的所有区的数据
+
+        $.each(countyJson, function(i, data) {
+
+            var $option = $("<option>" + data.area_name + "</option>");
+
+            $option.val(i);
+
+            $selectCounty.append($option);
+
+        });
+
+    }
+
     //关闭窗口
-    $("#saveAddress").click(function () {
-        $(".addAddress").hide();
+    $("#saveAddress").unbind("click");
+    $("#saveAddress").click(function (){
+        var param=$("#addressForm").serialize(),
+            pro=$("#queryProvince option:selected").text(),
+            city=$("#queryCity option:selected").text(),
+            county=$("#queryCounty option:selected").text();
+            // console.log(param);
+            //验证数据
+        let patt=/^\S+$/;//只能输入中文
+        let tel=/[0-9-()（）]{7,18}/; //电话号码
+
+        let obj=param.split("&");
+        let a=[];
+        for(let i=0;i<obj.length;i++){
+            let c=obj[i].split("=");
+            a.push(c);
+        }
+        if(!patt.test(a[0][1])){
+            $(".tips1").css("color","red",);
+            $(".tips1").show();
+        }else if(!tel.test(a[4][1])){
+            $(".tips2").css("color","red");
+            $(".tips2").show();
+        }
+
+        if(patt.test(a[0][1])&&patt.test(a[4][1])){
+            layer.confirm('确定保存？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                layer.msg('保存成功', {icon: 1,time:800});
+                $(".tips1").hide();
+                $(".tips2").hide();
+                $.ajax({
+                    type:"post",
+                    url:"/user/addAddress.do",
+                    data:param+"&pro="+pro+"&city="+city+"&county="+county,
+                    success:(data)=>{
+                        $(".addAddress").hide();
+                        getMyAddress();
+                    }
+                });
+            }, function(){
+                layer.msg('取消该操作', {time:800});
+                $(".addAddress").hide();
+            });
+        }
     });
 });
 
+//删除地址
+
+
 // 修改地址
-$("#update").click(function () {
-    console.log("222");
-    //打开添加窗口
-    $(".updateAddress").show();
+$(".right").on("click","#update",function () {
+        //打开添加窗口
+    let id=$(this).attr("data_id");
+        $.ajax({
+            type:"post",
+            url:"/user/seeAddress.do",
+            data:id,
+            success:(data)=>{
+                console.log(data.message);
 
-    //定义省市的信息
-    var provList = ['江苏','浙江','福建','湖南'];
-    var cityList = [];
-    cityList[0] = ['南京', '苏州', '宿迁', '扬州'];
-    cityList[1] = ['杭州', '温州', '宁波', '台州'];
-    cityList[2] = ['福州', '厦门', '泉州', '漳州'];
-    cityList[3] = ['长沙', '湘潭', '株洲', '湘西'];
+            }
+        });
+        $(".updateAddress").show();
+        $("#updateAddressForm").find("input").val("");
+        var provinceArr = new Array();
+        var cityArr;
+        var $selectProvince;
+        var $selectCounty;
+        var $selectCity;
+        $("#queryProvince1").click(showCities);
+        $(function() {
 
-//获取select元素
-    var provSelect = document.querySelector('#updateProv');
-    var citySelect = document.querySelector('#updateCity');
+            $selectProvince = $("#queryProvince");
+            $selectCounty = $("#queryCounty");
+            $selectCity = $("#queryCity");
+            getJson();
 
-//把省的信息 添加到第一个select元素中
-    provList.forEach(function(val, index){
-        //DOM操作  了解
-        provSelect.add(new Option(val, index))
-    });
-//给第一个select绑定change事件
-    provSelect.onchange = function(){
-        //获取 当前的选项
-        var index = this.value;
+        });
+        function getJson() {
+            //加载本地的json文件
+            $.getJSON("js/address.json", function(data) {
 
-        //清空第二个select原先内容
-        citySelect.length = 0;
+                $.each(data, function(index, info) {
 
-        //选择对应的城市列表，添加到第二个select
-        cityList[index].forEach(function(val, index){
-            citySelect.add(new Option(val, index));
-        })
-    };
-//手工触发一次 change事件
-    provSelect.onchange();
+                    provinceArr[index] = info;
+
+                    var $option = $("<option>" + info.area_name + "</option>");
+
+                    $option.val(index);
+
+                    $option.appendTo($selectProvince);
+
+                });
+
+            });
+
+        }
+        function showCities() {
+
+            cityArr = new Array();
+
+            var cityJson = provinceArr[$selectProvince.val()].city ;//获取当前省的所有市区的数据
+
+            $selectCity.empty();
+
+            $selectCounty.empty();
+
+            $.each(cityJson, function(i, data) {
+
+                cityArr[i] = data;
+
+                var $option = $("<option>" + data.area_name + "</option>");
+
+                $option.val(i);
+
+                $selectCity.append($option);
+
+            });
+
+            $("#queryCity2").click(showCounty);;
+        }
+        function showCounty() {
+            $selectCounty.empty();
+            var countyJson = cityArr[$("#queryCity2").val()].district //获取当前市的所有区的数据
+            $.each(countyJson, function(i, data) {
+                var $option = $("<option>" + data.area_name + "</option>");
+                $option.val(i);
+                $selectCounty.append($option);
+            });
+        }
+        //关闭窗口
+        $("#updateSave").unbind("click");
+        $("#updateSave").click(function () {
+            var param=$("#updateAddressForm").serialize(),
+                pro=$("#queryProvince option:selected").text(),
+                city=$("#queryCity option:selected").text(),
+                county=$("#queryCounty option:selected").text();
+            console.log(param);
+            //验证数据
+            // let patt=/^[\u4e00-\u9fa5]+$/;//只能输入中文
+            //
+            // let tel=/[0-9-()（）]{7,18}/; //电话号码
+            //
+
+            $.ajax({
+                type:"post",
+                url:"/user/updateAddress.do",
+                data:param+"&pro="+pro+"&city="+city+"&county="+county,
+                success:(data)=>{
+                    $(".updateAddressForm").hide();
+                    getMyAddress();
+                }
+            });
+        });
     //关闭窗口
     $("#updateSave").click(function () {
         $(".updateAddress").hide();
@@ -91,4 +253,10 @@ $("#update").click(function () {
     $("#reset").click(function () {
         $(".updateAddress").hide();
     });
+});
+
+//默认地址
+$(".right").on("click","#defaultAddress",function () {
+    $(this).css("border","1px solid @docColor","color","@dotColor");
+
 });

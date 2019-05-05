@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="./css/shop.css">
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/footer.css">
 </head>
 <!--购物车-->
 <body>
 <!--导航栏-->
-<header></header>
+<header>
+    <nav id="headerNav">
+        <h1><a href="../index.html"><img src="../img/index/logo.png" alt="logo"></a></h1>
+        <ul>
+            <a href="index.html"><li><div>|</div>首页<div>|</div></li></a>
+            <a href="allProducts.html"><li><div>|</div>所有商品<div>|</div></li></a>
+            <a href="giftGiving.html"><li><div>|</div>特产礼品<div>|</div></li></a>
+            <a href="tasteDetective.html"><li><div>|</div>口味侦探<div>|</div></li></a>
+            <a href="aboutUs.html"><li><div>|</div>关于我们<div>|</div></li></a>
+        </ul>
+        <ul>
+            <li id="searchBar" class="searchbar"><input type="text" name="keywords" id="keywords"/><span id="doSearch" class="icon icon-icon_search"></span></li>
+            <li><span class="icon icon-xinxi"></span></li>
+            <li id="userCenter" style="display:none"><a href="/userCenter.html" data-id=""><span class="icon icon-wode1"></span></a>
+                <span></span>
+            </li>
+            <li id="unlogin"><span><a href="login.html">登录</a></span> |  <span><a href="register.html">注册</a></span></li>
+        </ul>
+    </nav>
+</header>
+<aside>
+    <ul>
+        <li><a href="shopcart.html" class="icon icon-gouwuche"></a></li>
+        <li id="toTop"><a class="icon icon-xiangshangjiantou"></a></li>
+    </ul>
+</aside>
 <!--内容-->
 <section>
     <div>
@@ -16,7 +43,6 @@
             <div id="Shop">
                 <div>
                     <h3>全部商品</h3>
-                    <p></p>
                     <table align="left">
                         <thead>
                         <tr>
@@ -44,12 +70,54 @@
                 </div>
             </div>
         </form>
+        <div id="form2" style="display: none">
+            <p>空空如也....请先选择自己心仪的商品</p>
+            <p><a href="http://localhost:8080/allProducts.html">寻找心仪商品</a></p>
+        </div>
     </div>
 </section>
 <!--底部导航-->
-<footer></footer>
-<script src="../plug/jquery/jquery-3.3.1.min.js"></script>
-<script src="../js/ajaxFn.js"></script>
-<script src="../js/shopCart.js"></script>
+<footer>
+    <p>每一次追寻，都为更好的你</p>
+    <ul>
+        <li>
+            <h4>常见问题</h4>
+            <ul>
+                <li><a href="help.html">常见问题</a></li>
+            </ul>
+        </li>
+        <li>
+            <h4>配送说明</h4>
+            <ul>
+                <li id="">配送范围</li>
+                <li id="">无货/配货</li>
+                <li id="">异常处理</li>
+            </ul>
+        </li>
+        <li>
+            <h4>售后服务</h4>
+            <ul>
+                <li id="">退货流程</li>
+                <li id="">退货政策</li>
+                <li id="">退货地址</li>
+                <li id="">退货说明</li>
+            </ul>
+        </li>
+        <li>
+            <h4>联系我们</h4>
+            <ul>
+                <li id="">业务洽谈</li>
+                <li class="iconLi"><span class="icon icon-weixin1"></span></li>
+                <li class="iconLi"><span class="icon icon-weibo1"></span></li>
+            </ul>
+        </li>
+    </ul>
+    <p>小食记 川ICP备1222342432号-1 | Email：yunyang996@xsj.com | tel:400-100-8888</p>
+    <p>Copyright © 2010-2019 ...商贸有限公司 版权所有</p>
+</footer>
+<script src="./plug/jquery/jquery-3.3.1.min.js"></script>
+<script src="./js/ajaxFn.js"></script>
+<script src="./js/shopCart.js"></script>
+<script src="./js/head.js"></script>
 </body>
 </html>
