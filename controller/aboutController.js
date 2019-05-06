@@ -8,7 +8,6 @@ module.exports = {
     aboutControlle : (request,response) => {
         let a=request.src;
         aboutmodel.about(a,(err,data)=>{
-            console.log(data);
             if(!err){
                 if(data.length > 0){
                     response.render('aboutUs.html',{data});

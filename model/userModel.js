@@ -3,26 +3,26 @@
 module.exports = {
     //全部订单
     orderList(id,callback){
-        let sql="SELECT ol.create_time,od.order_no,\n" +
-            "ol.order_id ,pic.route,pic.master,\n" +
-            "goods.goods_name,goods.resume,\n" +
-            "od.goods_Price,od.goods_num,\n" +
-            "od.total_price,od.state,ol.postage\n" +
-            "FROM order_list AS ol ,\n" +
-            "USER AS u,\n" +
-            "order_details AS od ,\n" +
-            "goods,goodspic AS pic,\n" +
-            "goods_att AS ga\n" +
-            "WHERE u.user_id=1\n" +
-            "AND u.user_id=ol.user_id\n" +
-            "AND  u.user_id=od.user_id\n" +
-            "AND ol.order_id=od.order_no\n" +
-            "AND goods.goods_id=od.goods_id \n" +
-            "AND goods.goods_id=ga.goods_id\n" +
-            "AND ga.imge_id=pic.goods_id\n" +
-            "AND ol.order_id=pic.order_id\n" +
-            "AND goods.goods_id=pic.goods_id\n" +
-            "AND pic.master=1";
+        let sql=`SELECT ol.create_time,od.order_no,
+            ol.order_id ,pic.route,pic.master,
+            goods.goods_name,goods.resume,
+            od.goods_Price,od.goods_num,
+            od.total_price,od.state,ol.postage
+            FROM order_list AS ol ,
+            USER AS u,
+            order_details AS od ,
+            goods,goodspic AS pic,
+            goods_att AS ga
+            WHERE u.user_id=?
+            AND u.user_id=ol.user_id
+            AND  u.user_id=od.user_id
+            AND ol.order_id=od.order_no
+            AND goods.goods_id=od.goods_id 
+            AND goods.goods_id=ga.goods_id
+            AND ga.img_id=pic.goods_id
+            AND ol.order_id=pic.order_id
+            AND goods.goods_id=pic.goods_id
+            AND pic.master=1`;
         db.sqlpool(sql,[id],callback);
     },
     //收藏

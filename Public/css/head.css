@@ -280,7 +280,7 @@ button {
 .transit {
   transition: all .1s linear;
 }
-*,
+header *,
 ::before,
 ::after {
   box-sizing: content-box !important;

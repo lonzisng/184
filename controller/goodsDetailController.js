@@ -31,9 +31,8 @@ module.exports={
                 console.log(userId,goodsId,attId,num);
             goodsDetailModel.searchCard(userId,goodsId,attId,(err,data)=>{
                 if(!err){
-                    if(data<0){
+                    if(data<=0){
                         goodsDetailModel.addToCard(userId,goodsId,attId,num,(err,data)=>{
-                            console.log(err);
                             if(!err){
                                 if(data.affectedRows==1){
                                     res.send({code:200,msg:"ok"});

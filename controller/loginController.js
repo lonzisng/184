@@ -65,8 +65,8 @@ module.exports={
            pageSize = req.body.pageSize,
            name = obj[0].user_id;
       userModal.orderGoods(name,currentPage,pageSize,(err,data)=>{
-          console.log(err);
           if (!err){
+              req.session.goodes=data;
               res.send({code:1,message:data});
           }else {
               res.send({code:-1,message:"数据库出错"});

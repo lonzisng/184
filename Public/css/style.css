@@ -19,7 +19,8 @@ ul{ list-style: none; }
   position: absolute;
   left: 0;
   top: 0;
- 
+  box-sizing: border-box !important;
+  overflow: none;
 }
 
 .poster-main .poster-btn {

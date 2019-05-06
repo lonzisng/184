@@ -5,9 +5,9 @@ module.exports = {
     addUser(phone,pwd,callback){
         let time = new Date();
         let user = "xsj"+time.getTime();
-        let sql = `insert into user values(null,?,?,?,?,?,?,?,?,?,?,?,?)`;
+        let sql = `insert into user values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
         let craetedate = time.toLocaleString();
-        db.sqlpool(sql,[user,"",pwd,"default","",phone,time,"","","",craetedate,1],callback);
+        db.sqlpool(sql,[null,user,"",pwd,"","default","",phone,time,"","","",craetedate,1],callback);
     },
 
     //验证登陆
@@ -18,7 +18,7 @@ module.exports = {
 
     //获取用户订单中的全部商品
     orderGoods(name,currentPage,pageSize,callback){
-        let sql = `SELECT goods_att.order_id,shopcard.goods_id,goods_att.stock,shopcard.goods_id,goodspic.route,goods.goods_name,goods_att.price,shopcard.Shop_Num FROM shopcard JOIN goods ON shopcard.goods_id=goods.goods_id JOIN goods_att ON ( shopcard.att_id=goods_att.order_id AND goods.goods_id=goods_att.goods_id ) JOIN goodspic ON goods.goods_id=goodspic.goods_id WHERE goodspic.order_id=goods_att.img_id AND shopcard.user_id= ? ;`;
+        let sql = `SELECT shopcard.id,goods_att.order_id,shopcard.goods_id,goods_att.stock,shopcard.goods_id,goodspic.route,goods.goods_name,goods_att.price,shopcard.Shop_Num FROM shopcard JOIN goods ON shopcard.goods_id=goods.goods_id JOIN goods_att ON ( shopcard.att_id=goods_att.order_id AND goods.goods_id=goods_att.goods_id ) JOIN goodspic ON goods.goods_id=goodspic.goods_id WHERE goodspic.order_id=goods_att.img_id AND shopcard.state=1 and shopcard.user_id= ? ;`;
         let arr = [];
         let start = (currentPage-1)*pageSize;
             pageSize = Number(pageSize);

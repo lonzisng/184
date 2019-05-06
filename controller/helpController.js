@@ -9,7 +9,6 @@ module.exports = {
         let a=request.src;
         let b=request.text;
         db.help([a,b],(err,data)=>{
-            console.log(data);
             if(!err){
                 if(data.length > 0){
                     response.render('help.html',{data});

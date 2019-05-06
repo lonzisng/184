@@ -7,7 +7,7 @@ const db = require("../model/giftmode");
 module.exports = {
     gift(req,res){
         db.gift((err,data)=>{
-            console.log(data);
+            
             if(!err){
                 if(data.length>0){
                     res.render('giftGiving.html',{data});
